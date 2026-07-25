@@ -6,8 +6,17 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/11-19-里山
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/11-19-里山道整備の報告
+    title: 11/19 里山道整備の報告
+    published: '2023-11-19'
+    images:
+    - https://static.wixstatic.com/media/c3395c_15d844c96e404d3a96ade334a4f4ea86~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_20990960e7294c608f3e48a804ae9149~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_3e7ffe1a59d74dd4a5a97283d52f0062~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_9c37df949ad942198960f23090d521f7~mv2.jpg
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/11月19日-里山整備活動のご案内
     title: 11月19日 里山整備活動のご案内
@@ -22,12 +31,3 @@ source:
       【注意事項】 ●各自で水分補給やおやつの準備をお願いします。
 
       ●前日午後5時の気象庁発表による埼玉県南部の天気予報で、当日6時～12時の降水確率 が50％以上だった場合は作業を中止といたします。
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/11-19-里山道整備の報告
-    title: 11/19 里山道整備の報告
-    published: '2023-11-19'
-    images:
-    - https://static.wixstatic.com/media/c3395c_15d844c96e404d3a96ade334a4f4ea86~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_20990960e7294c608f3e48a804ae9149~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_3e7ffe1a59d74dd4a5a97283d52f0062~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_9c37df949ad942198960f23090d521f7~mv2.jpg

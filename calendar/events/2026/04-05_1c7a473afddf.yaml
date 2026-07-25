@@ -6,8 +6,16 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/4-5-名栗�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
+  - kind: announce
+    url: https://okumusashimtb.wixsite.com/omcweb/post/4-5-名栗定期作業のお知らせ
+    title: 4/5 名栗定期作業のお知らせ
+    published: '2026-03-18'
+    body: |-
+      4月5日（日）は名栗じてんしゃ広場の定期整備を行います。4月19日に開催の子ども自転車教室を前に、荒れた路面の補修を主に行います。同広場に午前9時にお集まりください。11時頃まで作業を行う予定です。
+
+      なお、前日17時の気象庁発表による埼玉県南部の天気予報で、当日6時〜12時の降水確率が50%以上の場合は中止といたしますのでご了承ください。
   - kind: report
     url: https://okumusashimtb.wixsite.com/omcweb/post/4-5-名栗定期作業のご報告
     title: 4/5 名栗定期作業のご報告
@@ -21,11 +29,3 @@ source:
     - https://static.wixstatic.com/media/c3395c_62216f6eb7cc47b794bae8b89f30ddac~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_2907e0c6babb4293adeb17c7ac9101e2~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_0cc2d237133a42b78e361cdd5131907e~mv2.jpg
-  - kind: announce
-    url: https://okumusashimtb.wixsite.com/omcweb/post/4-5-名栗定期作業のお知らせ
-    title: 4/5 名栗定期作業のお知らせ
-    published: '2026-03-18'
-    body: |-
-      4月5日（日）は名栗じてんしゃ広場の定期整備を行います。4月19日に開催の子ども自転車教室を前に、荒れた路面の補修を主に行います。同広場に午前9時にお集まりください。11時頃まで作業を行う予定です。
-
-      なお、前日17時の気象庁発表による埼玉県南部の天気予報で、当日6時〜12時の降水確率が50%以上の場合は中止といたしますのでご了承ください。

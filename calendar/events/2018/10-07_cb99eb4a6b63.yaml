@@ -6,12 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2018/10/16/�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/2018/10/16/１０月７日子どもマウンテンバイク教室開催しました
-    title: １０月７日子どもマウンテンバイク教室開催しました
-    published: '2018-10-16'
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/2018/08/09/子どもマウンテンバイク教室（１０月７日）
     title: 子どもマウンテンバイク教室（１０月７日）
@@ -52,3 +48,7 @@ source:
     - https://static.wixstatic.com/media/c3395c_73dbe76d3df445b385e53446ac910d32~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_7cc033b86cf94115bcb5f8d2ae8979a4~mv2_d_3261_2536_s_4_2.jpg
     - https://static.wixstatic.com/media/c3395c_35c36961f502495d9e9fc83c7b9216be~mv2_d_2048_1351_s_2.jpg
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/2018/10/16/１０月７日子どもマウンテンバイク教室開催しました
+    title: １０月７日子どもマウンテンバイク教室開催しました
+    published: '2018-10-16'

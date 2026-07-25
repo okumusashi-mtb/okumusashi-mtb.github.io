@@ -6,18 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/4月2日じ�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/4月2日じてんしゃ広場定期整備の報告
-    title: 4月2日じてんしゃ広場定期整備の報告
-    published: '2023-04-03'
-    images:
-    - fb-475570219
-    - fb-475422372
-    - fb-475763831
-    - fb-475677921
-    - fb-475639657
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/4月2日-日-名栗定期整備のお知らせ
     title: 4月2日(日) 名栗定期整備のお知らせ
@@ -28,3 +18,13 @@ source:
       翌日19日の臨時整備、翌週26日の子ども自転車教室と、活動が3週連続となりますが、ご都合よろしければご参加ください。
 
       なお、前日17時の気象庁発表による埼玉県南部の天気予報で、当日6時〜12時の降水確率が50%以上だった場合は中止といたしますのでご了承ください。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/4月2日じてんしゃ広場定期整備の報告
+    title: 4月2日じてんしゃ広場定期整備の報告
+    published: '2023-04-03'
+    images:
+    - fb-475570219
+    - fb-475422372
+    - fb-475763831
+    - fb-475677921
+    - fb-475639657

@@ -1,24 +1,13 @@
-summary: 日高市の活動
+summary: 日高市美化活動
 date: '2020-11-01'
 all_day: true
 category: その他
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/11月1日（日）日高市の活動のお知らせ'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/11-月1日-日高市美化活動'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: announce
-    url: https://okumusashimtb.wixsite.com/omcweb/post/11月1日（日）日高市の活動のお知らせ
-    title: 11月1日（日）日高市の活動のお知らせ
-    published: '2020-10-17'
-    body: |-
-      会員のみなさん、こんにちは。11月1日（日）は初の日高市での作業日となります。山道へと続く市道の清掃活動を行ないます。ぜひ、ご参加ください。
-      【日時】11月1日（日）8:30～12:00
-      【集合場所】セブンイレブン日高高麗本郷店
-      【雨の場合】前日の19時までにFacebookの会員ページにて開催の可否をお知らせします。
-      【持ち物】特になし
-      集合場所から活動場所までは自転車で移動します。お車でお越しの方は、巾着田有料駐車場（500円）や西武秩父線高麗駅周辺のコインパーキングをご利用ください。セブンイレブンには買い物以外の駐車はできません。
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/11-月1日-日高市美化活動
     title: 11 月1日 日高市美化活動
@@ -35,3 +24,14 @@ source:
     - https://static.wixstatic.com/media/c3395c_9a78eb4e2a4846bcae95d78720343c9f~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_579ad6d9fda74d87aa33f9c4814aa805~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_417ba1f87cca45ca97fc9da49f216a95~mv2.jpg
+  - kind: announce
+    url: https://okumusashimtb.wixsite.com/omcweb/post/11月1日（日）日高市の活動のお知らせ
+    title: 11月1日（日）日高市の活動のお知らせ
+    published: '2020-10-17'
+    body: |-
+      会員のみなさん、こんにちは。11月1日（日）は初の日高市での作業日となります。山道へと続く市道の清掃活動を行ないます。ぜひ、ご参加ください。
+      【日時】11月1日（日）8:30～12:00
+      【集合場所】セブンイレブン日高高麗本郷店
+      【雨の場合】前日の19時までにFacebookの会員ページにて開催の可否をお知らせします。
+      【持ち物】特になし
+      集合場所から活動場所までは自転車で移動します。お車でお越しの方は、巾着田有料駐車場（500円）や西武秩父線高麗駅周辺のコインパーキングをご利用ください。セブンイレブンには買い物以外の駐車はできません。

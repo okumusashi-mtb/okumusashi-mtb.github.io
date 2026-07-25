@@ -2,12 +2,23 @@ summary: 里山整備活動
 date: '2020-07-26'
 all_day: true
 category: 里山整備
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/【７-２６-日-里山整備活動のお知らせ】'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/【7-26-日-の作業中止のお知らせ】'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
+  - kind: announce
+    url: https://okumusashimtb.wixsite.com/omcweb/post/【7-26-日-の作業中止のお知らせ】
+    title: 【7/26(日)の作業中止のお知らせ】
+    published: '2020-07-25'
+    body: |-
+      7/26(日)の里山整備活動は 4：30現在、本降りの降雨のため中止とします。
+      ご準備いただいていた皆さんには申し訳ありませんが、よろしくお願いします。
+      昨日 17：00気象庁が発表した埼玉県南部の天気予報では30％だったのですが残念ながら予報が外れてしまいました。
+      次回の予定は9/19(土)加治美杉台まちづくり推進委員会の皆様との「真善美の径」の整備となります。
+
+      ご協力いただけましたら幸いです。
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/【７-２６-日-里山整備活動のお知らせ】
     title: 【７/２６(日) 里山整備活動のお知らせ】
@@ -28,14 +39,3 @@ source:
       地図はこちら
       奥武蔵のフィールドを楽しんでいるマウンテンバイク愛好家のみなさん、日頃楽しんでいるトレイルを維持する活動です。
       お時間ございました是非ともご協力をお願いします！
-  - kind: announce
-    url: https://okumusashimtb.wixsite.com/omcweb/post/【7-26-日-の作業中止のお知らせ】
-    title: 【7/26(日)の作業中止のお知らせ】
-    published: '2020-07-25'
-    body: |-
-      7/26(日)の里山整備活動は 4：30現在、本降りの降雨のため中止とします。
-      ご準備いただいていた皆さんには申し訳ありませんが、よろしくお願いします。
-      昨日 17：00気象庁が発表した埼玉県南部の天気予報では30％だったのですが残念ながら予報が外れてしまいました。
-      次回の予定は9/19(土)加治美杉台まちづくり推進委員会の皆様との「真善美の径」の整備となります。
-
-      ご協力いただけましたら幸いです。

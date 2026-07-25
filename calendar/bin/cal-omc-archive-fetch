@@ -7,6 +7,7 @@ sitemap で全記事 URL を列挙し、各記事ページの JSON-LD から hea
 from __future__ import annotations
 
 import argparse
+import copy
 import datetime
 import os
 import sys
@@ -57,6 +58,33 @@ def _load_record(url: str, cache_dir: str) -> dict | None:
     return record
 
 
+def _without_fetched(doc: dict) -> dict:
+    """source.fetched を除いた比較用コピーを返す。"""
+    doc = copy.deepcopy(doc)
+    doc.get("source", {}).pop("fetched", None)
+    return doc
+
+
+def write_event_if_changed(path: str, new_doc: dict) -> bool:
+    """fetched を除いて内容が同一なら書き換えずスキップする。
+
+    既存ファイルが存在しない/壊れている場合は従来どおり書き込む。
+    書き込んだら True、スキップしたら False を返す。
+    """
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                old_doc = yaml.safe_load(f)
+        except Exception:
+            old_doc = None
+        if isinstance(old_doc, dict) and _without_fetched(old_doc) == _without_fetched(new_doc):
+            return False
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        yaml.safe_dump(new_doc, f, allow_unicode=True, sort_keys=False)
+    return True
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--sitemap-file", default=None)
@@ -102,18 +130,21 @@ def main() -> int:
         items.append({"title": title, "link": url, "guid": url, "pub_date": pub,
                       "body": record.get("body", ""), "images": record.get("images", [])})
 
+    # sitemap の取得順は実行ごとに変わりうる (site 側が安定した順序を保証しない)。
+    # 同一日に複数の記事がある場合の並び (posts の順, description の出典選択) が
+    # 実行ごとに揺れてノイズ差分になるのを防ぐため、build_events に渡す前に
+    # url で安定ソートしておく。
+    items.sort(key=lambda it: it["link"])
     events = omc_parse.build_events(items)
     for ev in events:
         path = os.path.join(args.out_dir, omc_parse.event_filename(ev))
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            yaml.safe_dump(omc_parse.event_to_yaml_dict(ev, fetched, crawler="cal-omc-archive-fetch"), f,
-                           allow_unicode=True, sort_keys=False)
+        new_doc = omc_parse.event_to_yaml_dict(ev, fetched, crawler="cal-omc-archive-fetch")
+        write_event_if_changed(path, new_doc)
 
     if review:
         os.makedirs(os.path.dirname(os.path.abspath(args.review_file)), exist_ok=True)
         with open(args.review_file, "w", encoding="utf-8") as f:
-            for url, title, reason in review:
+            for url, title, reason in sorted(review):
                 f.write(f"{url}\t{title}\t{reason}\n")
 
     print(f"posts={len(urls)} events={len(events)} skipped={len(review)}")

@@ -1,13 +1,30 @@
-summary: 子どもマウンテンバイク教室
+summary: 子どもマウンテンバイク教室の開催について
 date: '2019-11-17'
 all_day: true
 category: 自転車教室
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2019/11/18/11月17日子どもじてんしゃ教室'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2019/11/12/【１１月１７日-子どもマウンテンバイク教室の開催について】'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
+  - kind: other
+    url: https://okumusashimtb.wixsite.com/omcweb/post/2019/11/12/【１１月１７日-子どもマウンテンバイク教室の開催について】
+    title: 【１１月１７日 子どもマウンテンバイク教室の開催について】
+    published: '2019-11-12'
+    body: |-
+      告知が遅くなりましたが次の日曜日、子供マウンテンバイク教室を開催いたします。
+      楽しみにしてくださっていたみなさん、お待たせいたしました。
+
+      日時：１１月１７日 （日）８時３０分受付〜１１時３０分終了予定
+      場所：名栗ふれあい公園内じてんしゃ広場
+      費用：無料
+      定員：２０名
+      内容：でこぼこと、うねりのある土の自転車コースで自転車遊びを楽しみます。
+        いつもの乗りなれた自転車で気軽に遊びにきてください。
+      持ち物：自転車（一般的な子ども自転車で参加可能です。補助輪つきは不可）
+        動きやすい服装（長袖、長ズボン推奨、スニーカー）
+       ヘルメット （レンタルヘルメットもあります。）
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/2019/11/18/11月17日子どもじてんしゃ教室
     title: 11月17日子どもマウンテンバイク教室
@@ -33,20 +50,3 @@ source:
     - https://static.wixstatic.com/media/c3395c_991a3411854d4a4d819cbb8c16251f8b~mv2_d_4160_3120_s_4_2.jpg
     - https://static.wixstatic.com/media/c3395c_776c102768724fc4abc2d09156feeacc~mv2_d_1296_1728_s_2.jpeg
     - https://static.wixstatic.com/media/c3395c_7f757a4ac8f64e0e950fe8cf25d373b4~mv2_d_1728_1296_s_2.jpeg
-  - kind: other
-    url: https://okumusashimtb.wixsite.com/omcweb/post/2019/11/12/【１１月１７日-子どもマウンテンバイク教室の開催について】
-    title: 【１１月１７日 子どもマウンテンバイク教室の開催について】
-    published: '2019-11-12'
-    body: |-
-      告知が遅くなりましたが次の日曜日、子供マウンテンバイク教室を開催いたします。
-      楽しみにしてくださっていたみなさん、お待たせいたしました。
-
-      日時：１１月１７日 （日）８時３０分受付〜１１時３０分終了予定
-      場所：名栗ふれあい公園内じてんしゃ広場
-      費用：無料
-      定員：２０名
-      内容：でこぼこと、うねりのある土の自転車コースで自転車遊びを楽しみます。
-        いつもの乗りなれた自転車で気軽に遊びにきてください。
-      持ち物：自転車（一般的な子ども自転車で参加可能です。補助輪つきは不可）
-        動きやすい服装（長袖、長ズボン推奨、スニーカー）
-       ヘルメット （レンタルヘルメットもあります。）

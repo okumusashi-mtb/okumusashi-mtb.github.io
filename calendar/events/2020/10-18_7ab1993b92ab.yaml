@@ -6,18 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/【10月１�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/【10月１８日-日-里山整備作業の報告】
-    title: 【10月１８日(日)里山整備作業の報告】
-    published: '2020-10-22'
-    images:
-    - https://static.wixstatic.com/media/c3395c_8bfc2413edc14d8a9ee576814dd3eff1~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_315da9c124a84b47afc2a63db2efc142~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_abc3117dd2504adcb8edf1e00b5382d0~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_25d10110b043456ca5ce6eb491791181~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_58997322182349f1acd6266ffe6ad096~mv2.jpg
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/【10-18-日-里山整備活動のお知らせ】
     title: 【10/18(日) 里山整備活動のお知らせ】
@@ -34,3 +24,13 @@ source:
        前日午後5時の気象庁の埼玉県南部の天気予報で、降水確率が５０％以上だった場合は中止いたします。（今回は都合により延期はいたしません）
        皆様ご協力をお願いします_(._.)_
        ※阿須公園駐車場が現在、復旧工事中のため集合場所を「あいわ広場」といたします。       地図は下記になります。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/【10月１８日-日-里山整備作業の報告】
+    title: 【10月１８日(日)里山整備作業の報告】
+    published: '2020-10-22'
+    images:
+    - https://static.wixstatic.com/media/c3395c_8bfc2413edc14d8a9ee576814dd3eff1~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_315da9c124a84b47afc2a63db2efc142~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_abc3117dd2504adcb8edf1e00b5382d0~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_25d10110b043456ca5ce6eb491791181~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_58997322182349f1acd6266ffe6ad096~mv2.jpg

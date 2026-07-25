@@ -6,12 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/7-17（日�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/7-17（日）の里山整備の活動報告
-    title: 7/17（日）の里山整備の活動報告
-    published: '2022-07-19'
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/7-17-日-里山整備作業のお知らせ
     title: 7/17(日) 里山整備作業のお知らせ
@@ -55,3 +51,7 @@ source:
     - https://static.wixstatic.com/media/c3395c_8b78158b3adc4ac29a98de6eace85e53~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_eda625e39d344b4c87ab2ec7d818e86c~mv2.png
     - https://static.wixstatic.com/media/c3395c_13a8b71409184e5b9245466b92f88f6d~mv2.jpg
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/7-17（日）の里山整備の活動報告
+    title: 7/17（日）の里山整備の活動報告
+    published: '2022-07-19'

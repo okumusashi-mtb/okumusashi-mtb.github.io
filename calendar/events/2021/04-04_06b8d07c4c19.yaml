@@ -6,16 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/4月4日名�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/4月4日名栗じんてしゃ広場活動報告
-    title: 4月4日名栗じんてしゃ広場活動報告
-    published: '2021-04-05'
-    images:
-    - https://static.wixstatic.com/media/c3395c_9e50f71189bd46358e20dafb3ed90369~mv2.png
-    - https://static.wixstatic.com/media/c3395c_81a7766687e643f88c7ae7a40bd0122e~mv2.png
-    - https://static.wixstatic.com/media/c3395c_82998e093a234eeca7645fce6e6d6b53~mv2.png
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/4月4日名栗じてんしゃ広場定期整備
     title: 4月4日名栗じてんしゃ広場定期整備
@@ -37,3 +29,11 @@ source:
 
       尚前日の気象庁17時の予報で埼玉県南部の降水確率が50%以上の場合は中止とさせて頂きますのでよろしくお願い申し上げます。
       ￼
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/4月4日名栗じんてしゃ広場活動報告
+    title: 4月4日名栗じんてしゃ広場活動報告
+    published: '2021-04-05'
+    images:
+    - https://static.wixstatic.com/media/c3395c_9e50f71189bd46358e20dafb3ed90369~mv2.png
+    - https://static.wixstatic.com/media/c3395c_81a7766687e643f88c7ae7a40bd0122e~mv2.png
+    - https://static.wixstatic.com/media/c3395c_82998e093a234eeca7645fce6e6d6b53~mv2.png

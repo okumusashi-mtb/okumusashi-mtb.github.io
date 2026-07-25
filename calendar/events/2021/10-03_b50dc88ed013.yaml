@@ -6,18 +6,17 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10月3日名
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/10月3日名栗じてんしゃ広場活動報告
-    title: 10月3日名栗じてんしゃ広場活動報告
-    published: '2021-10-04'
-    images:
-    - https://static.wixstatic.com/media/c3395c_d094c61507e847dabcc7c5b9b9dcf933~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_790a869b8b9444c990c5ccf9343a1eb1~mv2.png
-    - https://static.wixstatic.com/media/c3395c_7b48e48f5ae54106ac1b4522f6839a74~mv2.png
-    - https://static.wixstatic.com/media/c3395c_47ec8a3559014245a2915134a58066b4~mv2.png
-    - https://static.wixstatic.com/media/c3395c_f3ebaa136fd7442ca843e7e862e7462f~mv2.jpg
+  - kind: other
+    url: https://okumusashimtb.wixsite.com/omcweb/post/10-3-日-の名栗じてんしゃ広場の定期整備作業にご参加くださる皆様へ
+    title: 10/3(日)の名栗じてんしゃ広場の定期整備作業にご参加くださる皆様へ
+    published: '2021-10-01'
+    body: |-
+      10/3(日)の名栗じてんしゃ広場の定期整備作業にお車でお越しの方は名栗庁舎前の駐車場をご利用ください。
+
+      緊急事態宣言は解除とはなりましたが、段階的な緩和措置といたしまして名栗じてんしゃ広場の駐車場の開放は10/6(水)からになります。
+      みなさまのご参加よろしくお願いします。
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/10月3日名栗じてんしゃ広場定期整備
     title: 10月3日名栗じてんしゃ広場定期整備
@@ -33,12 +32,13 @@ source:
       　　　場所　名栗じてんしゃ広場
 
       尚、前日土曜日、午後5時の気象庁の埼玉県南部の天気予報で、降水確率が５０％以上だった場合は中止とさせて頂きますのでよろしくお願い申し上げます。
-  - kind: other
-    url: https://okumusashimtb.wixsite.com/omcweb/post/10-3-日-の名栗じてんしゃ広場の定期整備作業にご参加くださる皆様へ
-    title: 10/3(日)の名栗じてんしゃ広場の定期整備作業にご参加くださる皆様へ
-    published: '2021-10-01'
-    body: |-
-      10/3(日)の名栗じてんしゃ広場の定期整備作業にお車でお越しの方は名栗庁舎前の駐車場をご利用ください。
-
-      緊急事態宣言は解除とはなりましたが、段階的な緩和措置といたしまして名栗じてんしゃ広場の駐車場の開放は10/6(水)からになります。
-      みなさまのご参加よろしくお願いします。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/10月3日名栗じてんしゃ広場活動報告
+    title: 10月3日名栗じてんしゃ広場活動報告
+    published: '2021-10-04'
+    images:
+    - https://static.wixstatic.com/media/c3395c_d094c61507e847dabcc7c5b9b9dcf933~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_790a869b8b9444c990c5ccf9343a1eb1~mv2.png
+    - https://static.wixstatic.com/media/c3395c_7b48e48f5ae54106ac1b4522f6839a74~mv2.png
+    - https://static.wixstatic.com/media/c3395c_47ec8a3559014245a2915134a58066b4~mv2.png
+    - https://static.wixstatic.com/media/c3395c_f3ebaa136fd7442ca843e7e862e7462f~mv2.jpg

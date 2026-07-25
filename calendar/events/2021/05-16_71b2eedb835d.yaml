@@ -6,18 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/5-16-里山�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/5-16-里山整備のご報告
-    title: 5/16(日) 里山整備の報告
-    published: '2021-05-17'
-    images:
-    - https://static.wixstatic.com/media/c3395c_8199b1cd489d46f7b02176fb8aae92bd~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_48166637aa66411aa582a4afac728980~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_e8d06dc7e4754e608b1860abb8d751ad~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_9e53603666c948f79ecbed5d53919f7b~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_be0cb23c0b624fc590ef816f37a3aa6d~mv2.jpg
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/5-16-日-里山整備活動のご案内
     title: 5/16(日) 里山整備活動のご案内
@@ -41,3 +31,13 @@ source:
       ●ソーシャルディスタンス、手指の消毒などお気を付けください。
       ●各自で水分補給やおやつの準備をお願いします。
       ●前日午後5時の気象庁発表による埼玉県南部の天気予報で、降水確率が５０％以上だった場合は中止いたします。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/5-16-里山整備のご報告
+    title: 5/16(日) 里山整備の報告
+    published: '2021-05-17'
+    images:
+    - https://static.wixstatic.com/media/c3395c_8199b1cd489d46f7b02176fb8aae92bd~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_48166637aa66411aa582a4afac728980~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_e8d06dc7e4754e608b1860abb8d751ad~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_9e53603666c948f79ecbed5d53919f7b~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_be0cb23c0b624fc590ef816f37a3aa6d~mv2.jpg

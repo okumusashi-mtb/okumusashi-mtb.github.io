@@ -6,12 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/8月1日名�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/8月1日名栗じてんしゃ広場整備報告
-    title: 8月1日名栗じてんしゃ広場整備報告
-    published: '2021-08-01'
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/8月1日名栗じてんしゃ広場定期整備
     title: 8月1日名栗じてんしゃ広場定期整備
@@ -30,3 +26,7 @@ source:
       土曜日17時、気象庁の埼玉県南部の降水確定が50%以上、もしくは最高気温が35度以上の場合は中止とさせて頂きますのでよろしくお願い申し上げます。
 
       熱中症予防として、水分は多めに持参して頂けると幸いです。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/8月1日名栗じてんしゃ広場整備報告
+    title: 8月1日名栗じてんしゃ広場整備報告
+    published: '2021-08-01'

@@ -1,22 +1,13 @@
-summary: 里山整備活動の中止
+summary: 里山整備活動
 date: '2022-09-18'
 all_day: true
 category: 里山整備
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/9-18-日）里山整備活動の中止のお知らせ'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/9-18-日）里山整備活動のご案内'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: announce
-    url: https://okumusashimtb.wixsite.com/omcweb/post/9-18-日）里山整備活動の中止のお知らせ
-    title: 9/18(日）里山整備活動の中止のお知らせ
-    published: '2022-09-17'
-    body: |-
-      気象庁による明日の天気予報の降水確率が７０％と発表されました。
-      残念ですが明日の作業は中止とさせていただきます。
-      ご予定していただけた皆様には申し訳ありません。
-      またの機会にお願いします。
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/9-18-日）里山整備活動のご案内
     title: 9/18(日）里山整備活動のご案内
@@ -42,3 +33,12 @@ source:
       ●ソーシャルディスタンス、手指の消毒などお気を付けください。
       ●各自で水分補給やおやつの準備をお願いします。
       ●前日午後5時の気象庁発表による埼玉県南部の天気予報で、降水確率が５０％以上だった場合は中止いたします。
+  - kind: announce
+    url: https://okumusashimtb.wixsite.com/omcweb/post/9-18-日）里山整備活動の中止のお知らせ
+    title: 9/18(日）里山整備活動の中止のお知らせ
+    published: '2022-09-17'
+    body: |-
+      気象庁による明日の天気予報の降水確率が７０％と発表されました。
+      残念ですが明日の作業は中止とさせていただきます。
+      ご予定していただけた皆様には申し訳ありません。
+      またの機会にお願いします。

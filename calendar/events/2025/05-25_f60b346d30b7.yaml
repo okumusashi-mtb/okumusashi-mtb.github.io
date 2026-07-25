@@ -1,13 +1,24 @@
-summary: 日高市ごみゼロの日清掃作業
+summary: 日高市ごみゼロの日の案内
 date: '2025-05-25'
 all_day: true
 category: 清掃活動
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/5-25日高市ごみゼロの日清掃作業'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/5-25日高市ごみゼロの日の案内'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
+  - kind: other
+    url: https://okumusashimtb.wixsite.com/omcweb/post/5-25日高市ごみゼロの日の案内
+    title: 5/25日高市ごみゼロの日の案内
+    published: '2025-05-10'
+    body: |-
+      5月25日（日）は日高市ごみゼロの日に伴い、地元自治体と協働で道路の清掃と草刈りを行います。集合時間が普段の活動より早いですが、ご協力よろしくお願いします。
+
+      集合日時：5月25日（日）午前7時45分
+      集合場所：セブンイレブン日高高麗本郷店（https://goo.gl/maps/5ht4sMVpYWLzYZjZ7）
+
+      作業場所まではMTBで移動します。手鋸や枝切りバサミをお持ちの方はご持参ください。お車でお越しの方は近隣のコインパーキングに駐車してください。なお、前日午後5時の気象庁発表による埼玉県南部の天気予報で、当日6時～12時の降水確率が50％以上の場合は作業を中止といたします。
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/5-25日高市ごみゼロの日清掃作業
     title: 5/25日高市ごみゼロの日清掃作業
@@ -24,14 +35,3 @@ source:
     - https://static.wixstatic.com/media/c3395c_237281c258dc46d2b6a8f8bc34ce6167~mv2.png
     - https://static.wixstatic.com/media/c3395c_2c99df7c8ab24571922f290812323f19~mv2.png
     - https://static.wixstatic.com/media/c3395c_11d7724304a242b28737fb7f60544e9b~mv2.png
-  - kind: other
-    url: https://okumusashimtb.wixsite.com/omcweb/post/5-25日高市ごみゼロの日の案内
-    title: 5/25日高市ごみゼロの日の案内
-    published: '2025-05-10'
-    body: |-
-      5月25日（日）は日高市ごみゼロの日に伴い、地元自治体と協働で道路の清掃と草刈りを行います。集合時間が普段の活動より早いですが、ご協力よろしくお願いします。
-
-      集合日時：5月25日（日）午前7時45分
-      集合場所：セブンイレブン日高高麗本郷店（https://goo.gl/maps/5ht4sMVpYWLzYZjZ7）
-
-      作業場所まではMTBで移動します。手鋸や枝切りバサミをお持ちの方はご持参ください。お車でお越しの方は近隣のコインパーキングに駐車してください。なお、前日午後5時の気象庁発表による埼玉県南部の天気予報で、当日6時～12時の降水確率が50％以上の場合は作業を中止といたします。

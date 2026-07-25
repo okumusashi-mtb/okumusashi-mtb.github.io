@@ -6,8 +6,18 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/1月19日活
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/1月19日活動報告
+    title: 1月19日活動報告
+    published: '2020-01-23'
+    images:
+    - https://static.wixstatic.com/media/c3395c_68deb0804b164bf7bde273f63b0946a9~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_0258036d223942439434297fcdede489~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_58ad7c11c5194086b1bb891f6a7712ec~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_d70c267937a84af39c082c74adcedff0~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_cb92159c83ec4aff93c58691f51dbbb7~mv2.jpg
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/【1月19日-日-の作業について】
     title: 【1月19日(日)の作業について】
@@ -22,13 +32,3 @@ source:
       北浅羽桜堤公園に集合し、ミーティング後、MTBで作業箇所に向かいます。
       気温が低いなかでの作業ですので体温調節しやすい服装をおすすめします。また各自で水分補給やおやつの準備をお願いします。
       前日午後5時の気象庁の埼玉県南部の天気予報で、降水確率が５０％以上だった場合は中止いたします。
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/1月19日活動報告
-    title: 1月19日活動報告
-    published: '2020-01-23'
-    images:
-    - https://static.wixstatic.com/media/c3395c_68deb0804b164bf7bde273f63b0946a9~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_0258036d223942439434297fcdede489~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_58ad7c11c5194086b1bb891f6a7712ec~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_d70c267937a84af39c082c74adcedff0~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_cb92159c83ec4aff93c58691f51dbbb7~mv2.jpg

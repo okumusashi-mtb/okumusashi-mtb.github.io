@@ -6,15 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/5月28日-�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/5月28日-日高市市民清掃デーの作業報告
-    title: 5月28日 日高市市民清掃デーの作業報告
-    published: '2023-05-29'
-    images:
-    - https://static.wixstatic.com/media/c3395c_6c2d21d1c73546ba9dd3626af313ee7b~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_616413e7e8ac4433a8e51fc5b196ae0e~mv2.jpg
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/5月28日-日高市市民清掃デーのお知らせ
     title: 5月28日 日高市市民清掃デーのお知らせ
@@ -29,3 +22,10 @@ source:
       ●お車でお越しの方は、上記の集合場所までお越しください。無料駐車場を用意しましたので、到着後にそちらへ案内いたします。作業場所まではMTBで移動します。
       ●各自で水分補給やおやつの準備をお願いします。
       ●前日午後5時の気象庁発表による埼玉県南部の天気予報で、降水確率が50％以上だった場合は作業を中止といたします。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/5月28日-日高市市民清掃デーの作業報告
+    title: 5月28日 日高市市民清掃デーの作業報告
+    published: '2023-05-29'
+    images:
+    - https://static.wixstatic.com/media/c3395c_6c2d21d1c73546ba9dd3626af313ee7b~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_616413e7e8ac4433a8e51fc5b196ae0e~mv2.jpg

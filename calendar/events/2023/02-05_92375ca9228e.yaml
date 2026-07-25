@@ -1,13 +1,23 @@
-summary: 名栗定期整備について
+summary: 名栗定期整備
 date: '2023-02-05'
 all_day: true
 category: 定期作業
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2月5日名栗定期整備について'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2月5日名栗定期整備'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
+  - kind: other
+    url: https://okumusashimtb.wixsite.com/omcweb/post/2月5日名栗定期整備
+    title: 2月5日名栗定期整備
+    published: '2023-02-06'
+    body: |-
+      今年初めての名栗定期整備ご参加の皆さま、寒い中ありがとうございました。
+      土は凍ってるようなので、手前側のパンプコースのR改修の前段階としバームに盛り土をしました。
+      次回はRの内側を削りながら、面だしをして、Rをデカくしたいと思います。
+      活動後は、会員でもあり、駿大の活動の発起人である、平井先生から地元のジビエの鹿シチューと自家製パンをご馳走になりました。
+      寒い中での活動なので、暖かいシチューやパンをとても美味しく、最高のご褒美になりました。ご馳走様です。ありがとうございました。
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/2月5日名栗定期整備について
     title: 2月5日名栗定期整備について
@@ -21,13 +31,3 @@ source:
       時間:9時より11時頃まで
 
       尚、前日17時の気象庁発表による埼玉県南部の天気予報で、当日6時〜12時の降水確率が50%以上だった場合は中止とさせて頂きますのでよろしくお願いします。
-  - kind: other
-    url: https://okumusashimtb.wixsite.com/omcweb/post/2月5日名栗定期整備
-    title: 2月5日名栗定期整備
-    published: '2023-02-06'
-    body: |-
-      今年初めての名栗定期整備ご参加の皆さま、寒い中ありがとうございました。
-      土は凍ってるようなので、手前側のパンプコースのR改修の前段階としバームに盛り土をしました。
-      次回はRの内側を削りながら、面だしをして、Rをデカくしたいと思います。
-      活動後は、会員でもあり、駿大の活動の発起人である、平井先生から地元のジビエの鹿シチューと自家製パンをご馳走になりました。
-      寒い中での活動なので、暖かいシチューやパンをとても美味しく、最高のご褒美になりました。ご馳走様です。ありがとうございました。

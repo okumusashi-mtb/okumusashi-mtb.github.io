@@ -1,30 +1,13 @@
-summary: 子供じてんしゃ教室の実施について
+summary: 子供じてんしゃ教室を行いました
 date: '2021-04-18'
 all_day: true
 category: 自転車教室
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/子供じてんしゃ教室の実施について'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/4-18-子供じてんしゃ教室を行いました'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-25'
   posts:
-  - kind: other
-    url: https://okumusashimtb.wixsite.com/omcweb/post/子供じてんしゃ教室の実施について
-    title: 4月18日子供じてんしゃ教室の実施について
-    published: '2021-04-13'
-    body: |-
-      告知が遅くなりましたが、緊急事態宣言も明け、一年以上ぶりの開催です。
-      ふるってご参加ください。
-
-      日時：4月18日(日)9時〜11時30分
-      場所：名栗ふれあい公園内じてんしゃ広場
-      費用：無料
-      定員：20人
-      持ち物：自転車、動きやすい服装、ヘルメット
-      ※一般的な子ども用自転車で可。補助輪つきは不可。
-      ※貸し出し用ヘルメット準備あり(数量限定)。
-      申し込み：下記フォームでお申し込みください。
-      https://okumusashimtb.wixsite.com/omcweb/form-kidsschool
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/4-18-子供じてんしゃ教室を行いました
     title: 4/18 子供じてんしゃ教室を行いました
@@ -42,3 +25,20 @@ source:
     images:
     - https://static.wixstatic.com/media/c3395c_7441091db41a4763a1ff03706a2b2541~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_889ae498fef4461397f2c9ff22f10728~mv2.jpg
+  - kind: other
+    url: https://okumusashimtb.wixsite.com/omcweb/post/子供じてんしゃ教室の実施について
+    title: 4月18日子供じてんしゃ教室の実施について
+    published: '2021-04-13'
+    body: |-
+      告知が遅くなりましたが、緊急事態宣言も明け、一年以上ぶりの開催です。
+      ふるってご参加ください。
+
+      日時：4月18日(日)9時〜11時30分
+      場所：名栗ふれあい公園内じてんしゃ広場
+      費用：無料
+      定員：20人
+      持ち物：自転車、動きやすい服装、ヘルメット
+      ※一般的な子ども用自転車で可。補助輪つきは不可。
+      ※貸し出し用ヘルメット準備あり(数量限定)。
+      申し込み：下記フォームでお申し込みください。
+      https://okumusashimtb.wixsite.com/omcweb/form-kidsschool
