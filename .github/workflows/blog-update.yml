@@ -128,7 +128,7 @@ jobs:
           git diff --cached --quiet || { git commit -m "data: カレンダー反映後のスナップショット更新"; git push; }
 
       - name: Notify Discord on failure
-        if: failure() && env.DISCORD_WEBHOOK != ''
+        if: failure() && secrets.DISCORD_WEBHOOK_URL_OMC != ''
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL_OMC }}
         run: |
