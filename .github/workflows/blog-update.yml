@@ -1,0 +1,139 @@
+name: Blog update
+
+on:
+  repository_dispatch:
+    types: [blog-updated]
+  workflow_dispatch:
+    inputs:
+      max_changes:
+        description: 'events 変更の許容上限 (空=既定50)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  actions: write   # deploy-site.yml の起動に必要
+
+concurrency:
+  group: blog-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.2'
+          cache: 'npm'
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install Python deps
+        run: pip install --quiet pyyaml pytest
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch blog archive
+        run: make update
+
+      - name: Run tests
+        run: make test
+
+      - name: Fetch site photos
+        run: |
+          (cd site && npm ci)
+          make site-photos
+
+      - name: Safety check (blast radius cap)
+        env:
+          MAX_CHANGES: ${{ github.event.inputs.max_changes || '50' }}
+        run: |
+          CHANGED=$(git status --porcelain calendar/events | wc -l | tr -d ' ')
+          echo "calendar/events changed: $CHANGED files (cap: $MAX_CHANGES)"
+          if [ "$CHANGED" -gt "$MAX_CHANGES" ]; then
+            echo "::error::Too many event changes ($CHANGED > $MAX_CHANGES). Refusing to commit." >&2
+            git status --short calendar/events | head -60 >&2
+            exit 3
+          fi
+          OUT_OF_SCOPE=$(git status --porcelain \
+            | grep -v -E '^.. (calendar/(events/|sources/blog/|events-review-needed\.txt$)|site/src/assets/photos/)' || true)
+          if [ -n "$OUT_OF_SCOPE" ]; then
+            echo "::error::想定外のパスへの変更:" >&2
+            echo "$OUT_OF_SCOPE" >&2
+            exit 4
+          fi
+
+      - name: Commit and push data changes
+        id: commit
+        run: |
+          NEW_REVIEW=$(git diff -- calendar/events-review-needed.txt | grep '^+[^+]' || true)
+          if [ -n "$NEW_REVIEW" ]; then
+            { echo "### ⚠️ events 要確認 (新規)"; echo '```'; echo "$NEW_REVIEW"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi
+          git add calendar/events calendar/sources/blog calendar/events-review-needed.txt site/src/assets/photos
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "no data changes"
+          else
+            git commit -m "data: ブログ自動取込 $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger site deploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-site.yml
+
+      - name: Install gws (googleworkspace/cli)
+        run: |
+          VERSION=v0.22.5
+          URL="https://github.com/googleworkspace/cli/releases/download/${VERSION}/google-workspace-cli-x86_64-unknown-linux-gnu.tar.gz"
+          mkdir -p /tmp/gws-install
+          curl -sSL -o /tmp/gws-install/gws.tar.gz "$URL"
+          tar -xzf /tmp/gws-install/gws.tar.gz -C /tmp/gws-install
+          BIN=$(find /tmp/gws-install -name gws -type f -executable | head -1)
+          sudo install "$BIN" /usr/local/bin/gws
+
+      - name: Setup Service Account credentials
+        env:
+          GWS_SA_JSON: ${{ secrets.GWS_SA_JSON }}
+        run: |
+          if [ -z "${GWS_SA_JSON:-}" ]; then
+            echo "::error::GWS_SA_JSON secret missing"
+            exit 1
+          fi
+          printf '%s' "$GWS_SA_JSON" > /tmp/sa.json
+          chmod 600 /tmp/sa.json
+
+      - name: Apply to Google Calendar
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/sa.json
+        run: make calendar-apply
+
+      - name: Commit snapshots
+        run: |
+          NEW_PROJ=$(git diff -- calendar/projection-review-needed.txt | grep '^+[^+]' || true)
+          if [ -n "$NEW_PROJ" ]; then
+            { echo "### ⚠️ カレンダー反映 要確認 (新規)"; echo '```'; echo "$NEW_PROJ"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi
+          git add calendar/snapshots calendar/projection-review-needed.txt
+          git diff --cached --quiet || { git commit -m "data: カレンダー反映後のスナップショット更新"; git push; }
+
+      - name: Notify Discord on failure
+        if: failure() && env.DISCORD_WEBHOOK != ''
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL_OMC }}
+        run: |
+          URL="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          CONTENT="⚠️ OMC blog-update 失敗 (要確認): $URL"
+          jq -n --arg c "$CONTENT" '{content: $c}' \
+            | curl -fsS -X POST -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK" \
+            || true
