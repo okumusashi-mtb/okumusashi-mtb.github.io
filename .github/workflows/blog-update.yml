@@ -22,6 +22,9 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      # step の if: からは job レベル env しか見えない (secrets コンテキストは step if で使用不可)
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL_OMC }}
     steps:
       - uses: actions/checkout@v4
 
@@ -128,9 +131,7 @@ jobs:
           git diff --cached --quiet || { git commit -m "data: カレンダー反映後のスナップショット更新"; git push; }
 
       - name: Notify Discord on failure
-        if: failure() && secrets.DISCORD_WEBHOOK_URL_OMC != ''
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL_OMC }}
+        if: failure() && env.DISCORD_WEBHOOK != ''
         run: |
           URL="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           CONTENT="⚠️ OMC blog-update 失敗 (要確認): $URL"
