@@ -1,4 +1,4 @@
-summary: 名栗定期作業
+summary: 名栗整備作業中止
 date: '2025-02-02'
 all_day: true
 category: 定期作業
@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2-2名栗整
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/2-2名栗定期作業のお知らせ

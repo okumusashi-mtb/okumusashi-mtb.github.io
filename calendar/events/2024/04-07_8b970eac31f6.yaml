@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/4-7名栗じ
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/4-7（日）名栗じてんしゃ広場定期作業のお知らせ

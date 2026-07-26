@@ -221,3 +221,64 @@ def test_cancellation_notice_wins_summary_regardless_of_order(tmp_path):
     assert d1["description"] == f"出典: {url_cancel}"
     assert d2["description"] == f"出典: {url_cancel}"
     assert d1["description"] == d2["description"]
+
+
+def test_cancellation_notice_classified_as_other_still_wins_summary(tmp_path):
+    """中止告知のタイトルがキーワード分類で『その他』になるケース
+    (例:「7-20活動中止のお知らせ」) でも、案内記事のカテゴリ (例: 里山整備)
+    で絞り込む前に中止を検出し、summary に反映されること。
+    category != "その他" 分岐でカテゴリ絞り込みが先に行われていたため
+    中止候補が落ちてしまい、description (_pick_primary, 絞り込み無し) と
+    食い違う退行があったことに対する回帰テスト。"""
+    import subprocess
+
+    cli = _load_cli()
+    url_announce = "https://okumusashimtb.wixsite.com/omcweb/post/2026/07/10/7-20-satoyama-annouce"
+    url_cancel = "https://okumusashimtb.wixsite.com/omcweb/post/2026/07/19/7-20-satoyama-cancel"
+    recs = {
+        url_announce: {"url": url_announce, "title": "7/20 里山整備活動のお知らせ",
+                       "published": "2026-07-10", "body": "9時集合です。"},
+        url_cancel: {"url": url_cancel, "title": "7-20活動中止のお知らせ",
+                     "published": "2026-07-19", "body": "雨天のため中止します。"},
+    }
+
+    def _run(order):
+        d = tmp_path / ("other_cancel_run_" + "_".join(order))
+        cache = d / "cache"
+        cache.mkdir(parents=True)
+        urls_in_order = [url_announce if k == "announce" else url_cancel for k in order]
+        for url in urls_in_order:
+            (cache / f"{cli.omc_parse.slugify_post_url(url)}.yaml").write_text(
+                yaml.safe_dump(recs[url], allow_unicode=True, sort_keys=False), encoding="utf-8")
+        sitemap = d / "sitemap.xml"
+        locs = "\n".join(f"<url><loc>{u}</loc></url>" for u in urls_in_order)
+        sitemap.write_text(
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{locs}\n</urlset>\n',
+            encoding="utf-8")
+        out = d / "events"
+        r = subprocess.run(
+            [sys.executable, BIN, "--sitemap-file", str(sitemap), "--cache-dir", str(cache),
+             "--out-dir", str(out), "--review-file", str(d / "rev.txt"), "--fetched", "2026-07-20"],
+            capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        files = list(out.glob("2026/07-20_*.yaml"))
+        assert len(files) == 1
+        return yaml.safe_load(files[0].read_text(encoding="utf-8"))
+
+    d1 = _run(["announce", "cancel"])
+    d2 = _run(["cancel", "announce"])
+
+    # category はカテゴリ判定可能な案内記事 (里山整備) 由来のまま変わらない
+    assert d1["category"] == "里山整備"
+    assert d2["category"] == "里山整備"
+
+    # summary はカテゴリで絞り込まれず、その他分類の中止告知を拾うこと
+    assert "中止" in d1["summary"]
+    assert "中止" in d2["summary"]
+    assert d1["summary"] == d2["summary"]
+
+    # description (出典 URL) も同じ中止記事を指し、summary と食い違わないこと
+    assert d1["description"] == f"出典: {url_cancel}"
+    assert d2["description"] == f"出典: {url_cancel}"
+    assert d1["description"] == d2["description"]

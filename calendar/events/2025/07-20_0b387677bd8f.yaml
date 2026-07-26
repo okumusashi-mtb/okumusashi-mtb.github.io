@@ -1,4 +1,4 @@
-summary: 里山整備活動
+summary: 活動中止
 date: '2025-07-20'
 all_day: true
 category: 里山整備
@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/7-20活動�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/7月20日-里山整備活動のご案内

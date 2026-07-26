@@ -1,4 +1,4 @@
-summary: 日高市ごみゼロの日作業
+summary: 作業中止
 date: '2025-10-26'
 all_day: true
 category: 清掃活動
@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10-26作業�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/10-26日高市ごみゼロの日作業のお知らせ

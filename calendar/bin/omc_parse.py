@@ -325,7 +325,13 @@ def build_events(items: list[dict]) -> list[dict]:
                   [r for r in recs if r["kind"] != "report"]
         category = next((r["category"] for r in ordered if r["category"] != "その他"), "その他")
         if category != "その他":
-            summary = _pick_summary([r for r in ordered if r["category"] == category])
+            # 中止告知はカテゴリ分類が「その他」になりがち (例:「7/20活動中止のお知らせ」)
+            # なので、カテゴリで絞り込む前の ordered 全体に対して中止を探す。
+            # 見つからなければ従来どおりカテゴリ一致の先頭にフォールバックする。
+            # (_pick_primary の URL 選択も同様に全候補から中止を探しており、
+            #  _pick_summary を共有することで summary と description の判定を揃えている)
+            fallback = next(r for r in ordered if r["category"] == category)
+            summary = _pick_summary([fallback] + [r for r in ordered if r is not fallback])
         else:
             # 中止 > report > 先頭、の優先順で全候補から選ぶ (report を先頭に据えつつ
             # 残りを recs の順で連結し、report 優先の従来挙動を保ったまま中止告知を拾う)

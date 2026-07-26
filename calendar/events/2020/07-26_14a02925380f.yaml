@@ -1,4 +1,4 @@
-summary: 里山整備活動
+summary: 作業中止
 date: '2020-07-26'
 all_day: true
 category: 里山整備
@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/【7-26-日-
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/【７-２６-日-里山整備活動のお知らせ】

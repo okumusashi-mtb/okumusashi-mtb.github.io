@@ -1,4 +1,4 @@
-summary: 名栗定期作業
+summary: 活動中止
 date: '2025-08-03'
 all_day: true
 category: 定期作業
@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/8-3活動中
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/8-3-名栗定期作業のお知らせ

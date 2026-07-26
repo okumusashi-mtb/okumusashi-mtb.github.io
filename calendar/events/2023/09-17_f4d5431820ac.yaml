@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/9月17日-�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/9月17日-里山整備活動のご案内

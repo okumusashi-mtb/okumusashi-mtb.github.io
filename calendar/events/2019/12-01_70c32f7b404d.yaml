@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2019/12/02/1
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/2019/11/22/【12月1日-名栗じてんしゃ広場の定期整備について】

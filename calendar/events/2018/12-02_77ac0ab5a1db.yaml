@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2018/12/04/1
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-26'
+  fetched: '2026-07-27'
   posts:
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/2018/11/20/12月活動日12月2日・12月16日
