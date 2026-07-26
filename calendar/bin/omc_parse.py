@@ -268,12 +268,33 @@ def _uid_for(date: datetime.date) -> str:
     return hashlib.sha1(date.isoformat().encode("utf-8")).hexdigest()[:12]
 
 
+def _pick_with_priority(cands: list[dict], text_of):
+    """優先順: text_of(c) が「中止」を含むものを最優先で選ぶ。無ければ先頭 (cands[0])。
+
+    中止告知は後から出るため入力順(時系列)では先頭に来ないが、利用者に最も重要な
+    情報なので summary・出典 URL のどちらでも優先する。
+    「中止」は意図的に絞った部分一致ルールであり、延期・順延などは対象外。
+    二次的な優先順 (例: report を先頭に) は呼び出し側で cands の並びに反映しておくこと。
+    """
+    for c in cands:
+        if "中止" in text_of(c):
+            return c
+    return cands[0]
+
+
+def _report_first(items: list[dict]) -> list[dict]:
+    """report kind を先頭に据え、残りは元の順序で連結する。"""
+    report = next((it for it in items if it["kind"] == "report"), None)
+    return ([report] if report else []) + [it for it in items if it is not report]
+
+
 def _pick_summary(cands: list[dict]) -> str:
-    # 中止告知は後から出るため入力順では負けるが、利用者に最も重要な情報なので優先する
-    for r in cands:
-        if "中止" in r["summary"]:
-            return r["summary"]
-    return cands[0]["summary"]
+    return _pick_with_priority(cands, lambda r: r["summary"])["summary"]
+
+
+def _pick_primary(sources: list[dict]) -> dict:
+    """出典として代表させる source を選ぶ (中止 > report > 先頭)。"""
+    return _pick_with_priority(_report_first(sources), lambda s: s["title"])
 
 
 def build_events(items: list[dict]) -> list[dict]:
@@ -306,11 +327,9 @@ def build_events(items: list[dict]) -> list[dict]:
         if category != "その他":
             summary = _pick_summary([r for r in ordered if r["category"] == category])
         else:
-            report = next((r for r in recs if r["kind"] == "report"), None)
             # 中止 > report > 先頭、の優先順で全候補から選ぶ (report を先頭に据えつつ
             # 残りを recs の順で連結し、report 優先の従来挙動を保ったまま中止告知を拾う)
-            cands = ([report] if report else []) + [r for r in recs if r is not report]
-            summary = _pick_summary(cands)
+            summary = _pick_summary(_report_first(recs))
         events.append({
             "date": date,
             "category": category,
@@ -323,10 +342,7 @@ def build_events(items: list[dict]) -> list[dict]:
 
 
 def _report_or_first_url(event: dict) -> str:
-    for s in event["sources"]:
-        if s["kind"] == "report":
-            return s["url"]
-    return event["sources"][0]["url"]
+    return _pick_primary(event["sources"])["url"]
 
 
 def event_to_yaml_dict(event: dict, fetched: datetime.date,

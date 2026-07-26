@@ -170,10 +170,11 @@ def test_same_date_multi_post_event_is_deterministic_regardless_of_sitemap_order
 
 
 def test_cancellation_notice_wins_summary_regardless_of_order(tmp_path):
-    """同日に (案内, 後日の中止告知) の2 post があるとき、summary は
-    『中止』を含む告知を優先する (入力順に依存しない回帰テスト)。
-    2022-09-18 の実イベントで中止告知が summary から落ちる退行が
-    見つかったことに対する回帰テスト。"""
+    """同日に (案内, 後日の中止告知) の2 post があるとき、summary と
+    description(出典 URL) はともに『中止』を含む告知を優先する
+    (入力順に依存しない回帰テスト)。
+    2022-09-18 の実イベントで中止告知が summary/description から落ちる
+    退行が見つかったことに対する回帰テスト。"""
     import subprocess
 
     cli = _load_cli()
@@ -215,3 +216,8 @@ def test_cancellation_notice_wins_summary_regardless_of_order(tmp_path):
     assert "中止" in d1["summary"]
     assert "中止" in d2["summary"]
     assert d1["summary"] == d2["summary"]
+
+    # description (出典 URL) も中止記事を指すこと (入力順に依存しない)
+    assert d1["description"] == f"出典: {url_cancel}"
+    assert d2["description"] == f"出典: {url_cancel}"
+    assert d1["description"] == d2["description"]
