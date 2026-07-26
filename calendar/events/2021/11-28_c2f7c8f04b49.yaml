@@ -6,17 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/11月28日�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-25'
+  fetched: '2026-07-21'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/11月28日活動報告
-    title: 11月28日活動報告
-    published: '2021-11-30'
-    images:
-    - https://static.wixstatic.com/media/c3395c_12531e84cdf044f8acac3c5f858b567c~mv2.jpeg
-    - https://static.wixstatic.com/media/c3395c_5ce3b5ab0e274d03b6b865d408a79205~mv2.jpeg
-    - https://static.wixstatic.com/media/c3395c_541886ca80b440ee994bd0ea7aaa0bc9~mv2.jpeg
-    - https://static.wixstatic.com/media/c3395c_6a774b2f6bce487ea294537181ed4888~mv2.jpeg
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/【11月28日-里山清掃活動のご案内】
     title: 【11月28日 里山清掃活動のご案内】
@@ -46,3 +37,12 @@ source:
       ●野外での活動ですが、近距離での会話の際にはマスクの着用をお願いします。
       ●各自で水分補給やおやつの準備をお願いします。
       ●前日午後5時の気象庁発表による埼玉県南部の天気予報で、降水確率が50％以上だった場合は作業を中止といたします。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/11月28日活動報告
+    title: 11月28日活動報告
+    published: '2021-11-30'
+    images:
+    - https://static.wixstatic.com/media/c3395c_12531e84cdf044f8acac3c5f858b567c~mv2.jpeg
+    - https://static.wixstatic.com/media/c3395c_5ce3b5ab0e274d03b6b865d408a79205~mv2.jpeg
+    - https://static.wixstatic.com/media/c3395c_541886ca80b440ee994bd0ea7aaa0bc9~mv2.jpeg
+    - https://static.wixstatic.com/media/c3395c_6a774b2f6bce487ea294537181ed4888~mv2.jpeg

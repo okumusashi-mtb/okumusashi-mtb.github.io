@@ -6,18 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10-27日高�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-25'
+  fetched: '2026-07-21'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/10-27日高市ごみゼロの日作業報告
-    title: 10/27日高市ごみゼロの日作業報告
-    published: '2024-10-28'
-    images:
-    - https://static.wixstatic.com/media/c3395c_880de5f65691493eb7e8bcc94c90dc6f~mv2.png
-    - https://static.wixstatic.com/media/c3395c_1559e564e1ec4948bfad3ceee040f125~mv2.png
-    - https://static.wixstatic.com/media/c3395c_49682cf217fc4cc78940fe6e38b39ea2~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_725b9349e5404498946300b010774edc~mv2.png
-    - https://static.wixstatic.com/media/c3395c_eb5012fc2e2940518f4c7ba42b9f1f99~mv2.png
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/10-27日高市清掃作業のお知らせ
     title: 10/27日高市清掃作業のお知らせ
@@ -37,3 +27,13 @@ source:
       12月1日（日）　名栗じてんしゃ広場定期整備
 
       ご参加お待ちしています！
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/10-27日高市ごみゼロの日作業報告
+    title: 10/27日高市ごみゼロの日作業報告
+    published: '2024-10-28'
+    images:
+    - https://static.wixstatic.com/media/c3395c_880de5f65691493eb7e8bcc94c90dc6f~mv2.png
+    - https://static.wixstatic.com/media/c3395c_1559e564e1ec4948bfad3ceee040f125~mv2.png
+    - https://static.wixstatic.com/media/c3395c_49682cf217fc4cc78940fe6e38b39ea2~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_725b9349e5404498946300b010774edc~mv2.png
+    - https://static.wixstatic.com/media/c3395c_eb5012fc2e2940518f4c7ba42b9f1f99~mv2.png

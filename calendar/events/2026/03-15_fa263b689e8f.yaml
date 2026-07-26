@@ -6,17 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/3-15-日-の
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-26'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/3-15-日-の新規地域の活動報告
-    title: 3/15(日)の新規地域の活動報告
-    published: '2026-03-20'
-    images:
-    - https://static.wixstatic.com/media/c3395c_cc53bbeac14a4dc79c69d6d3f24a5f27~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_7609cd33fd4d423b998eb30ba075b3d0~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_65d46d59b49147f3a67fdaadefdeccbe~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_617dfcf1984346bc818eadb123318789~mv2.jpg
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/3-15-日-新規活動地域の初回活動のお知らせ
     title: 3/15(日) 新規活動地域の初回活動のお知らせ
@@ -55,3 +46,12 @@ source:
     - https://static.wixstatic.com/media/c3395c_ecf3c6534e0341789d803362e48b6abf~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_a9a3a13576514ff3b14852cd3329ba4f~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_033ea1d3612243b89b708027e84fb796~mv2.jpg
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/3-15-日-の新規地域の活動報告
+    title: 3/15(日)の新規地域の活動報告
+    published: '2026-03-20'
+    images:
+    - https://static.wixstatic.com/media/c3395c_cc53bbeac14a4dc79c69d6d3f24a5f27~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_7609cd33fd4d423b998eb30ba075b3d0~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_65d46d59b49147f3a67fdaadefdeccbe~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_617dfcf1984346bc818eadb123318789~mv2.jpg

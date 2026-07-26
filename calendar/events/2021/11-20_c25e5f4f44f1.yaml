@@ -6,16 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/11月20日�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-26'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/11月20日活動報告
-    title: 11月20日活動報告
-    published: '2021-11-22'
-    images:
-    - https://static.wixstatic.com/media/c3395c_42e75541072e44428d0e61f30a369b9c~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_67460ab8f91b4ff2b62fd4a25c717ddb~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_7665917ae22f49728144c1f49851241c~mv2.jpg
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/11月20日（土）里山整備作業
     title: 11月20日（土）里山整備作業
@@ -28,3 +20,11 @@ source:
       刈払い機の方は谷津田の刈払いを中心に手伝っていただきます。刈払機は、取扱作業者安全衛生教育を受講済で、刈払機をご用意いただける方のみ使用可とさせていただきます。
       その他の方は熊井のトレイルの掃除・簡単な刈り払い・倒木の撤去を行いますので、手鋸・剪定ばさみ等をお持ちください。
       当日は御協力よろしくお願いいたします。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/11月20日活動報告
+    title: 11月20日活動報告
+    published: '2021-11-22'
+    images:
+    - https://static.wixstatic.com/media/c3395c_42e75541072e44428d0e61f30a369b9c~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_67460ab8f91b4ff2b62fd4a25c717ddb~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_7665917ae22f49728144c1f49851241c~mv2.jpg

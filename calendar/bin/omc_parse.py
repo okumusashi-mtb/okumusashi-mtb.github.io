@@ -268,6 +268,14 @@ def _uid_for(date: datetime.date) -> str:
     return hashlib.sha1(date.isoformat().encode("utf-8")).hexdigest()[:12]
 
 
+def _pick_summary(cands: list[dict]) -> str:
+    # 中止告知は後から出るため入力順では負けるが、利用者に最も重要な情報なので優先する
+    for r in cands:
+        if "中止" in r["summary"]:
+            return r["summary"]
+    return cands[0]["summary"]
+
+
 def build_events(items: list[dict]) -> list[dict]:
     groups: dict[datetime.date, list[dict]] = {}
     for it in items:
@@ -296,10 +304,13 @@ def build_events(items: list[dict]) -> list[dict]:
                   [r for r in recs if r["kind"] != "report"]
         category = next((r["category"] for r in ordered if r["category"] != "その他"), "その他")
         if category != "その他":
-            summary = next(r["summary"] for r in ordered if r["category"] == category)
+            summary = _pick_summary([r for r in ordered if r["category"] == category])
         else:
             report = next((r for r in recs if r["kind"] == "report"), None)
-            summary = report["summary"] if report else recs[0]["summary"]
+            # 中止 > report > 先頭、の優先順で全候補から選ぶ (report を先頭に据えつつ
+            # 残りを recs の順で連結し、report 優先の従来挙動を保ったまま中止告知を拾う)
+            cands = ([report] if report else []) + [r for r in recs if r is not report]
+            summary = _pick_summary(cands)
         events.append({
             "date": date,
             "category": category,

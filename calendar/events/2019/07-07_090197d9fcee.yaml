@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2019/06/18/7
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-25'
+  fetched: '2026-07-26'
   posts:
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/2019/06/18/7月7日名栗自然体験会の件

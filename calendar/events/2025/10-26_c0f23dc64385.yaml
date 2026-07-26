@@ -2,17 +2,12 @@ summary: 日高市ごみゼロの日作業
 date: '2025-10-26'
 all_day: true
 category: 清掃活動
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10-26作業中止のお知らせ'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10-26日高市ごみゼロの日作業のお知らせ'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-26'
   posts:
-  - kind: announce
-    url: https://okumusashimtb.wixsite.com/omcweb/post/10-26作業中止のお知らせ
-    title: 10/26作業中止のお知らせ
-    published: '2025-10-25'
-    body: 明日26日の日高市ごみゼロの日作業ですが、降水確率が５０％を超えたため中止といたします。
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/10-26日高市ごみゼロの日作業のお知らせ
     title: 10/26日高市ごみゼロの日作業のお知らせ
@@ -24,3 +19,8 @@ source:
       集合場所：セブンイレブン日高高麗本郷店（https://goo.gl/maps/5ht4sMVpYWLzYZjZ7）
 
       作業場所まではMTBで移動します。手鋸や枝切りバサミをお持ちの方はご持参ください。お車でお越しの方は近隣のコインパーキングに駐車してください。なお、前日午後5時の気象庁発表による埼玉県南部の天気予報で、当日6時～12時の降水確率が50％以上の場合は作業を中止といたします。
+  - kind: announce
+    url: https://okumusashimtb.wixsite.com/omcweb/post/10-26作業中止のお知らせ
+    title: 10/26作業中止のお知らせ
+    published: '2025-10-25'
+    body: 明日26日の日高市ごみゼロの日作業ですが、降水確率が５０％を超えたため中止といたします。

@@ -6,16 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/5月21日-�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-25'
+  fetched: '2026-07-21'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/5月21日-里山清掃活動の報告
-    title: 5月21日 里山清掃活動の報告
-    published: '2023-05-30'
-    images:
-    - https://static.wixstatic.com/media/c3395c_9ab64eea61c04e77a56d39147fe3afda~mv2.png
-    - https://static.wixstatic.com/media/c3395c_4fe9ea51f4ef4623b38d452c57397662~mv2.png
-    - https://static.wixstatic.com/media/c3395c_878b73bb366e4acb913ace6464b5f9c6~mv2.png
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/【5月21日-里山清掃活動のお誘い】
     title: 【5月21日 里山清掃活動のお誘い】
@@ -40,3 +32,11 @@ source:
       ●前日午後5時の気象庁発表による埼玉県南部の天気予報で、降水確率が50％以上だった場合は作業を中止といたします。
 
       よろしくお願いします_(._.)_
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/5月21日-里山清掃活動の報告
+    title: 5月21日 里山清掃活動の報告
+    published: '2023-05-30'
+    images:
+    - https://static.wixstatic.com/media/c3395c_9ab64eea61c04e77a56d39147fe3afda~mv2.png
+    - https://static.wixstatic.com/media/c3395c_4fe9ea51f4ef4623b38d452c57397662~mv2.png
+    - https://static.wixstatic.com/media/c3395c_878b73bb366e4acb913ace6464b5f9c6~mv2.png

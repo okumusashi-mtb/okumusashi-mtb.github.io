@@ -127,7 +127,8 @@ def test_review_file_written_in_sorted_order(tmp_path):
 def test_same_date_multi_post_event_is_deterministic_regardless_of_sitemap_order(tmp_path):
     """sitemap の列挙順が実行ごとに変わっても、同一日に複数記事がある
     イベントの出力 (posts の順・description・summary) が揺れないこと。
-    (sitemap は site 側の都合で順序が安定しない実例が確認されたため)"""
+    (sitemap は site 側の都合で順序が安定しない実例が確認されたため。
+    並び替えの基準は公開日時 (pub_date) が主、同日同時刻は url でタイブレークする。)"""
     import subprocess
 
     cli = _load_cli()
@@ -166,3 +167,51 @@ def test_same_date_multi_post_event_is_deterministic_regardless_of_sitemap_order
     content_ab = _run(["a", "b"])
     content_ba = _run(["b", "a"])
     assert content_ab == content_ba
+
+
+def test_cancellation_notice_wins_summary_regardless_of_order(tmp_path):
+    """同日に (案内, 後日の中止告知) の2 post があるとき、summary は
+    『中止』を含む告知を優先する (入力順に依存しない回帰テスト)。
+    2022-09-18 の実イベントで中止告知が summary から落ちる退行が
+    見つかったことに対する回帰テスト。"""
+    import subprocess
+
+    cli = _load_cli()
+    url_announce = "https://okumusashimtb.wixsite.com/omcweb/post/2022/09/01/9-18-annouce"
+    url_cancel = "https://okumusashimtb.wixsite.com/omcweb/post/2022/09/15/9-18-cancel"
+    recs = {
+        url_announce: {"url": url_announce, "title": "9/18 名栗定期作業のお知らせ",
+                       "published": "2022-09-01", "body": "9時集合です。"},
+        url_cancel: {"url": url_cancel, "title": "9/18 名栗定期作業中止のお知らせ",
+                     "published": "2022-09-15", "body": "雨天のため中止します。"},
+    }
+
+    def _run(order):
+        d = tmp_path / ("cancel_run_" + "_".join(order))
+        cache = d / "cache"
+        cache.mkdir(parents=True)
+        urls_in_order = [url_announce if k == "announce" else url_cancel for k in order]
+        for url in urls_in_order:
+            (cache / f"{cli.omc_parse.slugify_post_url(url)}.yaml").write_text(
+                yaml.safe_dump(recs[url], allow_unicode=True, sort_keys=False), encoding="utf-8")
+        sitemap = d / "sitemap.xml"
+        locs = "\n".join(f"<url><loc>{u}</loc></url>" for u in urls_in_order)
+        sitemap.write_text(
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{locs}\n</urlset>\n',
+            encoding="utf-8")
+        out = d / "events"
+        r = subprocess.run(
+            [sys.executable, BIN, "--sitemap-file", str(sitemap), "--cache-dir", str(cache),
+             "--out-dir", str(out), "--review-file", str(d / "rev.txt"), "--fetched", "2026-07-20"],
+            capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        files = list(out.glob("2022/09-18_*.yaml"))
+        assert len(files) == 1
+        return yaml.safe_load(files[0].read_text(encoding="utf-8"))
+
+    d1 = _run(["announce", "cancel"])
+    d2 = _run(["cancel", "announce"])
+    assert "中止" in d1["summary"]
+    assert "中止" in d2["summary"]
+    assert d1["summary"] == d2["summary"]

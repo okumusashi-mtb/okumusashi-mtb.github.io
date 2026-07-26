@@ -6,20 +6,8 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/5-19-里山�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-26'
   posts:
-  - kind: report
-    url: https://okumusashimtb.wixsite.com/omcweb/post/5-19-里山道清掃活動の報告
-    title: 5/19 里山道清掃活動の報告
-    published: '2024-05-21'
-    images:
-    - https://static.wixstatic.com/media/c3395c_bff8c4a0d40a43de8b092614fd8738eb~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_e3c251bade764296b15172a6033bf5a8~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_7904e887d9874ac090f27f457e8d1c9f~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_7d268854612e48aabe4d7b64450c88f7~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_1ef4692dceea4529836646e33566f4c6~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_2274c361f08e47d6a6ad96ee1e3cc4c7~mv2.jpg
-    - https://static.wixstatic.com/media/c3395c_ed86af40ea8d422a8e7cfe7418023250~mv2.jpg
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/【5月19日-里山清掃活動のお誘い】
     title: 【5月19日 里山清掃活動のお誘い】
@@ -43,3 +31,15 @@ source:
       ●各自で水分補給やおやつの準備をお願いします。
       ●前日午後5時の気象庁発表による埼玉県南部の天気予報で、降水確率が50％以上だった場合は作業を中止といたします。
       ご協力よろしくお願いします_(._.)_
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/5-19-里山道清掃活動の報告
+    title: 5/19 里山道清掃活動の報告
+    published: '2024-05-21'
+    images:
+    - https://static.wixstatic.com/media/c3395c_bff8c4a0d40a43de8b092614fd8738eb~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_e3c251bade764296b15172a6033bf5a8~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_7904e887d9874ac090f27f457e8d1c9f~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_7d268854612e48aabe4d7b64450c88f7~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_1ef4692dceea4529836646e33566f4c6~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_2274c361f08e47d6a6ad96ee1e3cc4c7~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_ed86af40ea8d422a8e7cfe7418023250~mv2.jpg

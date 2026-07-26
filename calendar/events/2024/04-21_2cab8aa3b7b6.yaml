@@ -2,12 +2,24 @@ summary: 子ども自転車教室
 date: '2024-04-21'
 all_day: true
 category: 自転車教室
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/4-21子ども自転車教室'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/4-21（日）子ども自転車教室のお知らせ'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-26'
   posts:
+  - kind: announce
+    url: https://okumusashimtb.wixsite.com/omcweb/post/4-21（日）子ども自転車教室のお知らせ
+    title: 4/21（日）子ども自転車教室のお知らせ
+    published: '2024-03-14'
+    body: |-
+      4月21日（日）は、子どもじてんしゃ教室を開催いたします。詳しくはこちらをご覧ください。申し込みはこちらです。
+
+      4月開催のイベントが多く、飯能市広報の掲載スペースが足りなかったため、こちらで通常より早めのお知らせとなりました。
+
+      皆さまのご参加、お待ちしています。なお、前日17時の気象庁発表による埼玉県南部の天気予報で、当日6時～12時の降水確率が50%以上だった場合は、中止といたします。晴天を祈りましょう！
+
+      4/7（日）は子ども自転車教室に向けた定期整備作業になります。こちらのご参加もお待ちしています。
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/4-21子ども自転車教室
     title: 4/21子ども自転車教室
@@ -30,15 +42,3 @@ source:
     - https://static.wixstatic.com/media/c3395c_506acf99c1e148068a53baa19174f8d3~mv2.png
     - https://static.wixstatic.com/media/c3395c_ca7b5ef7904d4b63a489f80ddcf302a5~mv2.png
     - https://static.wixstatic.com/media/c3395c_b1b3e548bf8a40d5933ca76586077280~mv2.png
-  - kind: announce
-    url: https://okumusashimtb.wixsite.com/omcweb/post/4-21（日）子ども自転車教室のお知らせ
-    title: 4/21（日）子ども自転車教室のお知らせ
-    published: '2024-03-14'
-    body: |-
-      4月21日（日）は、子どもじてんしゃ教室を開催いたします。詳しくはこちらをご覧ください。申し込みはこちらです。
-
-      4月開催のイベントが多く、飯能市広報の掲載スペースが足りなかったため、こちらで通常より早めのお知らせとなりました。
-
-      皆さまのご参加、お待ちしています。なお、前日17時の気象庁発表による埼玉県南部の天気予報で、当日6時～12時の降水確率が50%以上だった場合は、中止といたします。晴天を祈りましょう！
-
-      4/7（日）は子ども自転車教室に向けた定期整備作業になります。こちらのご参加もお待ちしています。

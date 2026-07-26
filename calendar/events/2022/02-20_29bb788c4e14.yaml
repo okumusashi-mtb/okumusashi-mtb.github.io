@@ -2,17 +2,12 @@ summary: 里山整備活動
 date: '2022-02-20'
 all_day: true
 category: 里山整備
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2月20日整備活動中止のお知らせ'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/2月20日（日）里山整備活動のご案内'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-25'
+  fetched: '2026-07-21'
   posts:
-  - kind: announce
-    url: https://okumusashimtb.wixsite.com/omcweb/post/2月20日整備活動中止のお知らせ
-    title: 2月20日整備活動中止のお知らせ
-    published: '2022-02-10'
-    body: 先日告知した2月20日（日）の里山整備活動ですが、埼玉県での『まん延防止等重点措置』が3月6日まで延長されたことを受けまして、中止といたします。次回の活動は3月13日（日）を予定しています。
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/2月20日（日）里山整備活動のご案内
     title: 2月20日（日）里山整備活動のご案内
@@ -30,3 +25,8 @@ source:
       ●各自で水分補給やおやつの準備をお願いします。
       ●前日午後5時の気象庁発表による埼玉県南部の天気予報で、降水確率が50％以上だった場合は作業を中止といたします。
       ●まん延防止等重点措置または緊急事態宣言が発出された際は作業を中止といたします。
+  - kind: announce
+    url: https://okumusashimtb.wixsite.com/omcweb/post/2月20日整備活動中止のお知らせ
+    title: 2月20日整備活動中止のお知らせ
+    published: '2022-02-10'
+    body: 先日告知した2月20日（日）の里山整備活動ですが、埼玉県での『まん延防止等重点措置』が3月6日まで延長されたことを受けまして、中止といたします。次回の活動は3月13日（日）を予定しています。

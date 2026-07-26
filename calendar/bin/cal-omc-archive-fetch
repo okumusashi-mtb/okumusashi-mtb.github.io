@@ -133,8 +133,8 @@ def main() -> int:
     # sitemap の取得順は実行ごとに変わりうる (site 側が安定した順序を保証しない)。
     # 同一日に複数の記事がある場合の並び (posts の順, description の出典選択) が
     # 実行ごとに揺れてノイズ差分になるのを防ぐため、build_events に渡す前に
-    # url で安定ソートしておく。
-    items.sort(key=lambda it: it["link"])
+    # 公開日時 (同日同時刻は url) で安定ソートしておく。
+    items.sort(key=lambda it: (it["pub_date"], it["link"]))
     events = omc_parse.build_events(items)
     for ev in events:
         path = os.path.join(args.out_dir, omc_parse.event_filename(ev))

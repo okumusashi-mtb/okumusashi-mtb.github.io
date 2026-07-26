@@ -1,13 +1,29 @@
-summary: 里山道の整備作業
+summary: 里山整備
 date: '2022-12-18'
 all_day: true
 category: 里山整備
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/12-18-日-里山道の整備作業'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/12月18日里山整備のお知らせ'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-07-21'
+  fetched: '2026-07-26'
   posts:
+  - kind: announce
+    url: https://okumusashimtb.wixsite.com/omcweb/post/12月18日里山整備のお知らせ
+    title: 12月18日（日）里山整備のお知らせ
+    published: '2022-12-14'
+    body: |-
+      冬本番、トレイルは落ち葉のカサカサで寒いけど楽しいライドですね。
+      さて告知が直前になってしまいましたが、日曜日は里山整備となっております。
+      水切りなど、道の維持整備活動を行いたいと思います。
+
+      日にち:  12月18日
+      集合場所:  あいわ広場
+      集合時間:8時30分
+
+      アメスコ、バチズル、など会の方である程度はご用意いたします。
+
+      前日　17時、気象庁の埼玉南部地域の降水確率が50%以上の場所は中止とさせて頂きますのでよろしくお願いします。
   - kind: other
     url: https://okumusashimtb.wixsite.com/omcweb/post/12-18-日-里山道の整備作業
     title: 12/18(日) 里山道の整備作業
@@ -35,19 +51,3 @@ source:
     - https://static.wixstatic.com/media/c3395c_3a728af0f06c4685bc6495ab91e21888~mv2.jpeg
     - https://static.wixstatic.com/media/c3395c_9dcd9b5060b94e4fb3a35467b5082e34~mv2.jpeg
     - https://static.wixstatic.com/media/c3395c_7372891b00ae48b8ae527f04e30ce82e~mv2.jpeg
-  - kind: announce
-    url: https://okumusashimtb.wixsite.com/omcweb/post/12月18日里山整備のお知らせ
-    title: 12月18日（日）里山整備のお知らせ
-    published: '2022-12-14'
-    body: |-
-      冬本番、トレイルは落ち葉のカサカサで寒いけど楽しいライドですね。
-      さて告知が直前になってしまいましたが、日曜日は里山整備となっております。
-      水切りなど、道の維持整備活動を行いたいと思います。
-
-      日にち:  12月18日
-      集合場所:  あいわ広場
-      集合時間:8時30分
-
-      アメスコ、バチズル、など会の方である程度はご用意いたします。
-
-      前日　17時、気象庁の埼玉南部地域の降水確率が50%以上の場所は中止とさせて頂きますのでよろしくお願いします。
