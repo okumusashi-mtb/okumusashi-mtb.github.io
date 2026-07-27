@@ -268,33 +268,39 @@ def _uid_for(date: datetime.date) -> str:
     return hashlib.sha1(date.isoformat().encode("utf-8")).hexdigest()[:12]
 
 
-def _pick_with_priority(cands: list[dict], text_of):
-    """優先順: text_of(c) が「中止」を含むものを最優先で選ぶ。無ければ先頭 (cands[0])。
+def _pick_primary_record(recs: list[dict], fallback: dict, category: str) -> dict:
+    """主記事 (summary・出典 URL の両方が従う代表 post) を選ぶ:「最後の意思表示が勝つ」。
 
-    中止告知は後から出るため入力順(時系列)では先頭に来ないが、利用者に最も重要な
-    情報なので summary・出典 URL のどちらでも優先する。
+    候補 = 「タイトルに『中止』を含む post」∪「kind == "report" かつ
+    (イベントのカテゴリが「その他」、または report 自身のカテゴリがイベントの
+    カテゴリと一致する) post」。
+    候補があれば published が最も新しいものを採用する
+    (中止告知の後に報告が出ていれば報告が勝ち、報告が無ければ中止告知が勝つ)。
+    同日 published のタイブレークは「中止」post を優先する。
+    候補が無ければ fallback (呼び出し側が用意した先頭の候補) をそのまま返す。
+
     「中止」は意図的に絞った部分一致ルールであり、延期・順延などは対象外。
-    二次的な優先順 (例: report を先頭に) は呼び出し側で cands の並びに反映しておくこと。
+    report 側にカテゴリ一致条件を課しているのは、型付き告知 (例:里山整備) と
+    無関係な汎用報告 (例:「の活動報告」のみでキーワードが無く category="その他"
+    になるもの) が同日にある場合、汎用報告が単に日付が新しいという理由だけで
+    型付き告知の情報を上書きしてしまう既存の dedup 仕様
+    (test_build_events_merges_generic_report_with_typed_announce) を壊さないため。
+    「中止」候補はカテゴリに関わらず全 recs から探す (中止告知は「その他」に
+    分類されがちなため、カテゴリで絞ると拾えなくなる)。
+    summary・description(出典 URL) は必ずこの関数の返す同一の主記事から導くことで、
+    両者が食い違わないようにする。
     """
-    for c in cands:
-        if "中止" in text_of(c):
-            return c
-    return cands[0]
+    cands = [r for r in recs
+             if "中止" in r["src"]["title"]
+             or (r["kind"] == "report" and (category == "その他" or r["category"] == category))]
+    if not cands:
+        return fallback
 
+    def sort_key(r: dict):
+        is_cancel = "中止" in r["src"]["title"]
+        return (r["src"]["published"], is_cancel)
 
-def _report_first(items: list[dict]) -> list[dict]:
-    """report kind を先頭に据え、残りは元の順序で連結する。"""
-    report = next((it for it in items if it["kind"] == "report"), None)
-    return ([report] if report else []) + [it for it in items if it is not report]
-
-
-def _pick_summary(cands: list[dict]) -> str:
-    return _pick_with_priority(cands, lambda r: r["summary"])["summary"]
-
-
-def _pick_primary(sources: list[dict]) -> dict:
-    """出典として代表させる source を選ぶ (中止 > report > 先頭)。"""
-    return _pick_with_priority(_report_first(sources), lambda s: s["title"])
+    return max(cands, key=sort_key)
 
 
 def build_events(items: list[dict]) -> list[dict]:
@@ -326,29 +332,30 @@ def build_events(items: list[dict]) -> list[dict]:
         category = next((r["category"] for r in ordered if r["category"] != "その他"), "その他")
         if category != "その他":
             # 中止告知はカテゴリ分類が「その他」になりがち (例:「7/20活動中止のお知らせ」)
-            # なので、カテゴリで絞り込む前の ordered 全体に対して中止を探す。
-            # 見つからなければ従来どおりカテゴリ一致の先頭にフォールバックする。
-            # (_pick_primary の URL 選択も同様に全候補から中止を探しており、
-            #  _pick_summary を共有することで summary と description の判定を揃えている)
+            # なので、fallback (候補が無い場合の既定値) はカテゴリ一致の先頭だが、
+            # 中止・report の探索自体は recs 全体 (カテゴリ不問) に対して行う。
             fallback = next(r for r in ordered if r["category"] == category)
-            summary = _pick_summary([fallback] + [r for r in ordered if r is not fallback])
         else:
-            # 中止 > report > 先頭、の優先順で全候補から選ぶ (report を先頭に据えつつ
-            # 残りを recs の順で連結し、report 優先の従来挙動を保ったまま中止告知を拾う)
-            summary = _pick_summary(_report_first(recs))
+            fallback = recs[0]
+        # summary と description(出典 URL) は必ず同じ主記事 (primary) から導く。
+        # これにより「最後の意思表示が勝つ」判定が両者で食い違わないことを保証する。
+        primary = _pick_primary_record(recs, fallback, category)
         events.append({
             "date": date,
             "category": category,
             "all_day": True,
             "uid": _uid_for(date),
-            "summary": summary,
+            "summary": primary["summary"],
             "sources": [r["src"] for r in recs],
+            "primary_url": primary["src"]["url"],
         })
     return events
 
 
 def _report_or_first_url(event: dict) -> str:
-    return _pick_primary(event["sources"])["url"]
+    # build_events が primary_url を必ず設定するが、手組みの event dict にも
+    # 頑健であるよう、無い場合は先頭 source にフォールバックする。
+    return event.get("primary_url") or event["sources"][0]["url"]
 
 
 def event_to_yaml_dict(event: dict, fetched: datetime.date,

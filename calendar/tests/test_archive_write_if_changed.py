@@ -223,6 +223,116 @@ def test_cancellation_notice_wins_summary_regardless_of_order(tmp_path):
     assert d1["description"] == d2["description"]
 
 
+def test_report_after_cancellation_wins_over_cancellation(tmp_path):
+    """『最後の意思表示が勝つ』回帰テスト (2025/08-03 型)。
+    (案内, 中止告知, 中止よりさらに後日の report) の3 post があるとき、
+    実際には活動が行われたことを report が示しているので、
+    summary/description は中止ではなく report を採用すること
+    (入力順に依存しない)。
+    2025-08-03 の実イベントで、中止告知の後に写真付きの報告記事が
+    投稿されていたにもかかわらず summary が「活動中止」になっていた
+    誤りに対する回帰テスト (Google カレンダーの実績「名栗定期作業」とも矛盾していた)。"""
+    import subprocess
+
+    cli = _load_cli()
+    url_announce = "https://okumusashimtb.wixsite.com/omcweb/post/2025/07/18/8-3-announce"
+    url_cancel = "https://okumusashimtb.wixsite.com/omcweb/post/2025/08/02/8-3-cancel"
+    url_report = "https://okumusashimtb.wixsite.com/omcweb/post/2025/08/07/8-3-report"
+    recs = {
+        url_announce: {"url": url_announce, "title": "8/3 名栗定期作業のお知らせ",
+                       "published": "2025-07-18", "body": "9時集合です。"},
+        url_cancel: {"url": url_cancel, "title": "8/3活動中止のお知らせ",
+                     "published": "2025-08-02", "body": "気温が高いため中止します。"},
+        url_report: {"url": url_report, "title": "8/3名栗定期作業の報告",
+                     "published": "2025-08-07",
+                     "images": ["https://static.wixstatic.com/media/c3395c_dummy.jpg"]},
+    }
+
+    def _run(order):
+        d = tmp_path / ("report_wins_run_" + "_".join(order))
+        cache = d / "cache"
+        cache.mkdir(parents=True)
+        key_to_url = {"announce": url_announce, "cancel": url_cancel, "report": url_report}
+        urls_in_order = [key_to_url[k] for k in order]
+        for url in urls_in_order:
+            (cache / f"{cli.omc_parse.slugify_post_url(url)}.yaml").write_text(
+                yaml.safe_dump(recs[url], allow_unicode=True, sort_keys=False), encoding="utf-8")
+        sitemap = d / "sitemap.xml"
+        locs = "\n".join(f"<url><loc>{u}</loc></url>" for u in urls_in_order)
+        sitemap.write_text(
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{locs}\n</urlset>\n',
+            encoding="utf-8")
+        out = d / "events"
+        r = subprocess.run(
+            [sys.executable, BIN, "--sitemap-file", str(sitemap), "--cache-dir", str(cache),
+             "--out-dir", str(out), "--review-file", str(d / "rev.txt"), "--fetched", "2026-07-27"],
+            capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        files = list(out.glob("2025/08-03_*.yaml"))
+        assert len(files) == 1
+        return yaml.safe_load(files[0].read_text(encoding="utf-8"))
+
+    d1 = _run(["announce", "cancel", "report"])
+    d2 = _run(["report", "cancel", "announce"])
+
+    assert "中止" not in d1["summary"]
+    assert "中止" not in d2["summary"]
+    assert d1["summary"] == d2["summary"] == "名栗定期作業"
+
+    assert d1["description"] == f"出典: {url_report}"
+    assert d2["description"] == f"出典: {url_report}"
+
+
+def test_cancellation_still_wins_when_no_later_report(tmp_path):
+    """report が存在しない (中止告知のみで終わる) 既存ケースでは、
+    引き続き中止告知が summary/description を勝ち取ること
+    (『最後の意思表示が勝つ』ルールの退行防止)。"""
+    import subprocess
+
+    cli = _load_cli()
+    url_announce = "https://okumusashimtb.wixsite.com/omcweb/post/2022/09/01/9-18-annouce2"
+    url_cancel = "https://okumusashimtb.wixsite.com/omcweb/post/2022/09/15/9-18-cancel2"
+    recs = {
+        url_announce: {"url": url_announce, "title": "9/18 名栗定期作業のお知らせ",
+                       "published": "2022-09-01", "body": "9時集合です。"},
+        url_cancel: {"url": url_cancel, "title": "9/18 名栗定期作業中止のお知らせ",
+                     "published": "2022-09-15", "body": "雨天のため中止します。"},
+    }
+
+    def _run(order):
+        d = tmp_path / ("still_cancel_run_" + "_".join(order))
+        cache = d / "cache"
+        cache.mkdir(parents=True)
+        key_to_url = {"announce": url_announce, "cancel": url_cancel}
+        urls_in_order = [key_to_url[k] for k in order]
+        for url in urls_in_order:
+            (cache / f"{cli.omc_parse.slugify_post_url(url)}.yaml").write_text(
+                yaml.safe_dump(recs[url], allow_unicode=True, sort_keys=False), encoding="utf-8")
+        sitemap = d / "sitemap.xml"
+        locs = "\n".join(f"<url><loc>{u}</loc></url>" for u in urls_in_order)
+        sitemap.write_text(
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{locs}\n</urlset>\n',
+            encoding="utf-8")
+        out = d / "events"
+        r = subprocess.run(
+            [sys.executable, BIN, "--sitemap-file", str(sitemap), "--cache-dir", str(cache),
+             "--out-dir", str(out), "--review-file", str(d / "rev.txt"), "--fetched", "2026-07-27"],
+            capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        files = list(out.glob("2022/09-18_*.yaml"))
+        assert len(files) == 1
+        return yaml.safe_load(files[0].read_text(encoding="utf-8"))
+
+    d1 = _run(["announce", "cancel"])
+    d2 = _run(["cancel", "announce"])
+    assert "中止" in d1["summary"]
+    assert "中止" in d2["summary"]
+    assert d1["description"] == f"出典: {url_cancel}"
+    assert d2["description"] == f"出典: {url_cancel}"
+
+
 def test_cancellation_notice_classified_as_other_still_wins_summary(tmp_path):
     """中止告知のタイトルがキーワード分類で『その他』になるケース
     (例:「7-20活動中止のお知らせ」) でも、案内記事のカテゴリ (例: 里山整備)
