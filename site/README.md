@@ -46,6 +46,28 @@ Astro はこの変換結果を `node_modules/.astro` に貯めるが、CI では
 `astro.config.mjs` の `base` を変えると出力ファイル名のハッシュが全て変わり、
 キャッシュが総入れ替えになる（＝そのビルドだけは遅くなる）。
 
+### Firebase Hosting（試用、本番ではない）
+
+比較のため Firebase Hosting へ手動で 1 度デプロイした。設定はリポジトリ直下の
+`firebase.json` と `.firebaserc`（プロジェクト `okumusashi-mtb`）。
+
+```bash
+make site-build
+firebase deploy --only hosting --project okumusashi-mtb
+```
+
+**自動デプロイは設定していない**ので、`https://okumusashi-mtb.web.app/` の内容は
+最後に手動デプロイした時点で止まっている。公開しているのは GitHub Pages 側なので、
+URL を案内するときは `https://okumusashi-mtb.github.io/` を使うこと。
+
+常用しない理由は無料枠の転送量。Spark プランの上限は **360MB/日**で、しかも超過時は
+課金ではなく配信停止になる。このサイトは写真 1 枚が 500KB 前後あり、活動詳細ページを
+数十回表示しただけで到達する。GitHub Pages は 100GB/月（ソフトリミット）なので桁が違う。
+Firebase に寄せるなら Blaze プランへの変更が前提。
+
+止めるときは `firebase hosting:disable`（URL は残り「Site Not Found」を返す。
+再開は再デプロイのみ）。
+
 ## 主な構成
 
 | 場所 | 内容 |

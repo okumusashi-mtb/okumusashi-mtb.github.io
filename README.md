@@ -147,6 +147,10 @@ GitHub Pages（`https://okumusashi-mtb.github.io/`）に公開します。詳し
 > 完全に一致する場合だけです。名前を変えると、公開 URL が
 > `https://okumusashi-mtb.github.io/<新しい名前>/` に変わってしまいます。
 
+直下の `firebase.json` / `.firebaserc` は、比較のため Firebase Hosting を試したときの設定です。
+**本番では使っていません**（`https://okumusashi-mtb.web.app/` の内容は手動デプロイした時点で
+止まっています）。経緯と再開方法は `site/README.md` を参照。
+
 ### Google カレンダーの注意点
 
 - Google カレンダーへの書き込みには、サービスアカウントの鍵（`~/.config/omc/sa.json`）と、
