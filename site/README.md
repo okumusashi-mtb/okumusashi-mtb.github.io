@@ -1,6 +1,6 @@
 # site/ — 奥武蔵マウンテンバイク友の会 ウェブサイト
 
-会の活動記録を公開するウェブサイト（<https://tecolicom.github.io/OMC/>）のソース。
+会の活動記録を公開するウェブサイト（<https://okumusashi-mtb.github.io/omcweb/>）のソース。
 Astro + Tailwind CSS の静的サイトで、リポジトリの活動データ（`../calendar/`）から
 トップ・活動一覧・活動詳細・会について のページを生成する。
 
@@ -23,7 +23,7 @@ Node は nodenv 管理、`../.node-version` = 22.22.2（Astro 7 は Node ≥22.1
 リポジトリ直下の `make` が便利：
 
 ```bash
-make site-dev      # ローカルで開発表示（http://localhost:4321/OMC/）
+make site-dev      # ローカルで開発表示（http://localhost:4321/omcweb/）
 make site-build    # 本番ビルド（site/dist/ に出力）
 make site-photos   # 不足している写真をブログから取り込む
 ```
@@ -33,7 +33,7 @@ make site-photos   # 不足している写真をブログから取り込む
 ## 公開（デプロイ）
 
 `main` に push すると GitHub Actions（`../.github/workflows/deploy-site.yml`）が
-Node 22.22.2 でビルドし、GitHub Pages（base path `/OMC`）へ自動公開する。
+Node 22.22.2 でビルドし、GitHub Pages（base path `/omcweb`）へ自動公開する。
 
 ## 主な構成
 
