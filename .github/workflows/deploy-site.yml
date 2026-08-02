@@ -23,6 +23,14 @@ jobs:
           cache-dependency-path: site/package-lock.json
       - run: npm ci
         working-directory: site
+      # 画像変換結果のキャッシュ。npm ci が node_modules を作り直すので必ずその後に復元する。
+      # 写真・依存・base 設定のいずれかが変わるとキーが変わるが、restore-keys で
+      # 直前のキャッシュを引き継ぎ、変更のない写真は再変換せずに済む。
+      - uses: actions/cache@v4
+        with:
+          path: site/node_modules/.astro
+          key: astro-assets-${{ hashFiles('site/package-lock.json', 'site/astro.config.mjs', 'site/src/assets/photos/**') }}
+          restore-keys: astro-assets-
       - run: npm run build
         working-directory: site
       - uses: actions/upload-pages-artifact@v3
