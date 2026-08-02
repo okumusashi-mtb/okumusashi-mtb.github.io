@@ -35,6 +35,10 @@
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') show(idx - 1);
       else if (e.key === 'ArrowRight') show(idx + 1);
+      else return;
+      // 既定動作 (スクロール) を止める。body が overflow:hidden でスクロール
+      // できないため、これが無いと WebKit 系でシステムのアラート音が鳴る。
+      e.preventDefault();
     });
   })();
 </script>
