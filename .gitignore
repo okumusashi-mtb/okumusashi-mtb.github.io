@@ -10,5 +10,8 @@ sa.json
 __pycache__/
 *.pyc
 
+# Firebase CLI のデプロイキャッシュ (再生成可能)
+.firebase/
+
 # OS
 .DS_Store
