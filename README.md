@@ -148,8 +148,10 @@ GitHub Pages（`https://okumusashi-mtb.github.io/`）に公開します。詳し
 > `https://okumusashi-mtb.github.io/<新しい名前>/` に変わってしまいます。
 
 直下の `firebase.json` / `.firebaserc` は、比較のため Firebase Hosting を試したときの設定です。
-**本番では使っていません**（`https://okumusashi-mtb.web.app/` の内容は手動デプロイした時点で
-止まっています）。経緯と再開方法は `site/README.md` を参照。
+Cloudflare Pages（`https://omcweb.pages.dev/`）にも試しにデプロイしてあります。
+**どちらも本番では使っておらず**、内容は手動デプロイした時点で止まっています。
+無料枠の比較、移行を検討すべき時期（GitHub Pages のサイト容量 1GB に約 7 年で到達）は
+`site/README.md` の「ホスティングの比較」を参照。
 
 ### Google カレンダーの注意点
 

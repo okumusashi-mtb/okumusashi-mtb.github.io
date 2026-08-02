@@ -11,7 +11,8 @@ const d = activity.date;
    class="group block rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition no-underline">
   <div class="aspect-[4/3] bg-[var(--color-cream)] overflow-hidden">
     {cover
-      ? <Image src={cover} alt="" widths={[400, 800]} sizes="(max-width:640px) 100vw, 400px"
+      ? <Image src={cover} alt="" widths={[320, 480, 640]}
+               sizes="(max-width:640px) calc(100vw - 2rem), (max-width:1024px) calc(50vw - 1.5rem), 320px"
                class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy" />
       : <Image src={omcLogo} alt="奥武蔵MTB友の会" widths={[200, 269]} sizes="200px"
                class="w-full h-full object-contain p-6" loading="lazy" />}

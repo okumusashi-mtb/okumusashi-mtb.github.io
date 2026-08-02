@@ -10,8 +10,9 @@ sa.json
 __pycache__/
 *.pyc
 
-# Firebase CLI のデプロイキャッシュ (再生成可能)
+# Firebase / Cloudflare CLI のデプロイキャッシュ (再生成可能)
 .firebase/
+.wrangler/
 
 # OS
 .DS_Store
