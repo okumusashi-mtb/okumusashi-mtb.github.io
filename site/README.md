@@ -34,6 +34,17 @@ make site-photos   # 不足している写真をブログから取り込む
 
 `main` に push すると GitHub Actions（`../.github/workflows/deploy-site.yml`）が
 Node 22.22.2 でビルドし、GitHub Pages（ルート `/` 配信）へ自動公開する。
+リポジトリ名が `okumusashi-mtb.github.io` であることがルート配信の条件なので、
+名前を変えると公開 URL がサブパスに落ちる。
+
+ビルド時間のほとんどは写真 929 枚から WebP 2488 個を生成する処理（キャッシュ無しで約 2 分）。
+Astro はこの変換結果を `node_modules/.astro` に貯めるが、CI では `npm ci` が
+`node_modules` ごと作り直すため、`actions/cache` で `npm ci` の**後に**復元している。
+キーは写真・`package-lock.json`・`astro.config.mjs` のハッシュで、`restore-keys` により
+写真を追加しても既存分は再変換されない。写真に変更が無ければビルドは 5 秒程度で終わる。
+
+`astro.config.mjs` の `base` を変えると出力ファイル名のハッシュが全て変わり、
+キャッシュが総入れ替えになる（＝そのビルドだけは遅くなる）。
 
 ## 主な構成
 
