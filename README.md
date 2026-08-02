@@ -15,7 +15,7 @@
    会の手元のデータとして残るようにしています。
 
 2. **会のウェブサイトと Google カレンダーを、この記録からつくる。**
-   活動の記録と写真から、会のウェブサイト（[okumusashi-mtb.github.io/omcweb/](https://okumusashi-mtb.github.io/omcweb/)）を
+   活動の記録と写真から、会のウェブサイト（[okumusashi-mtb.github.io](https://okumusashi-mtb.github.io/)）を
    公開しています。活動は会の Google カレンダー（`okumusashi.mtb@gmail.com`）にも登録し、
    このカレンダーはウェブサイトや「街てこり」（city.tecoli.com）の会のページに表示しています。
 
@@ -29,7 +29,7 @@
    会のブログ (Wix)                このフォルダ (OMC)                   外に見せるもの
   ─────────────         ──────────────────            ───────────────
   お知らせ / 報告  ──①──▶  活動の記録・記事・写真の控え   ──②──▶  会のウェブサイト
-  （文章・写真）            ＋ ウェブサイトのソース (site/)    │       okumusashi-mtb.github.io/omcweb/
+  （文章・写真）            ＋ ウェブサイトのソース (site/)    │       okumusashi-mtb.github.io/
                                                             └──▶  会の Google カレンダー
                                                                    └─▶ city.tecoli.com の会のページ
 ```
@@ -53,7 +53,7 @@
 | `calendar/sources/blog/` | ブログ記事を 1 本ずつ控えたもの（本文・写真のリンク・記事のリンク） | **ブログ全記事の控え**（約 360 本）。将来の引っ越し用の保全 |
 | `calendar/snapshots/` | Google カレンダーに登録した内容の控え | **カレンダーのバックアップ** |
 | `calendar/bin/` | ①②を行う道具（プログラム） | **更新を実行する道具**（担当者が使う） |
-| `site/` | 会のウェブサイト（[okumusashi-mtb.github.io/omcweb/](https://okumusashi-mtb.github.io/omcweb/)）のソース | **公開サイトの中身**（活動一覧・写真・カレンダー） |
+| `site/` | 会のウェブサイト（[okumusashi-mtb.github.io](https://okumusashi-mtb.github.io/)）のソース | **公開サイトの中身**（活動一覧・写真・カレンダー） |
 | `idea.yaml` | 会の基本情報（名前・公式サイト・カレンダーの場所） | 会のプロフィール |
 | `docs/` | 設計や作業のメモ | 作った人向けの記録 |
 
@@ -76,7 +76,7 @@
 
 ## カレンダーとウェブサイトについて
 
-- **会のウェブサイト**（[okumusashi-mtb.github.io/omcweb/](https://okumusashi-mtb.github.io/omcweb/)）で、これまでの活動を
+- **会のウェブサイト**（[okumusashi-mtb.github.io](https://okumusashi-mtb.github.io/)）で、これまでの活動を
   写真つきで公開しています。トップには今後の予定（会の Google カレンダー）も表示しています。
   中身は `site/` のソースから作られ、`main` に反映すると自動で公開されます（詳しくは `site/README.md`）。
 - **会の Google カレンダー**（`okumusashi.mtb@gmail.com`）には、ここの記録から**過去の活動が登録済み**です。
@@ -134,13 +134,13 @@ make push              # 変更を GitHub に送る（コミットは別途）
 Node は nodenv 管理で `.node-version`（22.22.2、Astro 7 は Node ≥22.12 が必要）。
 
 ```bash
-make site-dev      # ローカルで表示を確認（http://localhost:4321/omcweb/）
+make site-dev      # ローカルで表示を確認（http://localhost:4321/）
 make site-build    # 本番ビルド（site/dist/ に出力）
 make site-photos   # 不足している写真をブログから取り込む
 ```
 
 `main` に push すると GitHub Actions（`.github/workflows/deploy-site.yml`）が自動でビルドし、
-GitHub Pages（`https://okumusashi-mtb.github.io/omcweb/`）に公開します。詳しくは `site/README.md`。
+GitHub Pages（`https://okumusashi-mtb.github.io/`）に公開します。詳しくは `site/README.md`。
 
 ### Google カレンダーの注意点
 
