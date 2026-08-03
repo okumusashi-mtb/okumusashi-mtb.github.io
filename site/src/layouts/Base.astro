@@ -1,7 +1,11 @@
 ---
 import '../styles/global.css';
-const { title, description } = Astro.props;
+const { title, description, noindex } = Astro.props;
 const base = import.meta.env.BASE_URL;
+// 正規 URL は astro.config.mjs の site (GitHub Pages)。同じ成果物を Cloudflare
+// Pages や Firebase Hosting にも置くことがあるため、どこから配信されても
+// 「正規版はここ」と示せるよう絶対 URL を埋める。
+const canonical = new URL(Astro.url.pathname, Astro.site);
 const nav = [
   { href: base, label: 'トップ' },
   { href: base + 'activities/', label: '活動' },
@@ -14,6 +18,9 @@ const nav = [
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    {noindex
+      ? <meta name="robots" content="noindex" />
+      : <link rel="canonical" href={canonical} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
   </head>
