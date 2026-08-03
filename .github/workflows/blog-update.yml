@@ -26,9 +26,9 @@ jobs:
       # step の if: からは job レベル env しか見えない (secrets コンテキストは step if で使用不可)
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL_OMC }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22.22.2'
           cache: 'npm'
