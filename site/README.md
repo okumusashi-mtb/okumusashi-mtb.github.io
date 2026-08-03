@@ -37,7 +37,7 @@ Node 22.22.2 でビルドし、GitHub Pages（ルート `/` 配信）へ自動�
 リポジトリ名が `okumusashi-mtb.github.io` であることがルート配信の条件なので、
 名前を変えると公開 URL がサブパスに落ちる。
 
-ビルド時間のほとんどは写真 929 枚から WebP 2488 個を生成する処理（キャッシュ無しで約 2 分）。
+ビルド時間のほとんどは写真 929 枚から WebP 2608 個を生成する処理（キャッシュ無しで約 2 分）。
 Astro はこの変換結果を `node_modules/.astro` に貯めるが、CI では `npm ci` が
 `node_modules` ごと作り直すため、`actions/cache` で `npm ci` の**後に**復元している。
 キーは写真・`package-lock.json`・`astro.config.mjs` のハッシュで、`restore-keys` により
@@ -45,6 +45,11 @@ Astro はこの変換結果を `node_modules/.astro` に貯めるが、CI では
 
 `astro.config.mjs` の `base` を変えると出力ファイル名のハッシュが全て変わり、
 キャッシュが総入れ替えになる（＝そのビルドだけは遅くなる）。
+
+GitHub Actions の Node 20 ランタイムは 2026 年秋に撤廃予定。使っている action は
+2026-08 に checkout v7 / setup-node v7 / cache v6 / upload-pages-artifact v5 /
+deploy-pages v5 へ更新済み。`upload-pages-artifact` は v4 でドットファイルを
+成果物に含めなくなったが、`dist/` に該当が無いため影響しない。
 
 ## ホスティングの比較（2026-08 時点）
 
@@ -57,6 +62,15 @@ URL を案内するときは必ず `https://okumusashi-mtb.github.io/` を使う
 | <https://okumusashi-mtb.github.io/> | **本番**。`main` への push で自動更新 |
 | <https://omcweb.pages.dev/> | Cloudflare Pages（試用、手動） |
 | <https://okumusashi-mtb.web.app/> | Firebase Hosting（試用、手動） |
+
+同じ成果物が 3 か所にあるので、検索エンジンから重複コンテンツと見なされないよう
+`Base.astro` で canonical タグを出している。`astro.config.mjs` の `site` を基準に
+絶対 URL を埋めるため、どこから配信されても正規版 (GitHub Pages) を指す。
+ミラーの URL を README や外部に書いても、正規版が優先される。
+
+`404.astro` が無かった頃は、Cloudflare Pages だけが存在しないパスにトップページを
+200 で返していた (GitHub Pages と Firebase は既定の 404)。自前の 404 ページを
+用意して 3 か所とも揃えてある。404 は `noindex` とし canonical は出さない。
 
 ### 1 ページあたりの転送量（実測）
 
@@ -146,8 +160,8 @@ wrangler pages deploy site/dist --project-name omcweb --branch main
 | `src/data/activities.ts` | 活動データ層（events×archive を記事 URL で結合、写真名の解決、slug 生成） |
 | `src/lib/photos.ts` | 取り込み済み写真の解決（`getPhoto`） |
 | `src/components/` | `ActivityCard` / `PhotoGrid` / `Lightbox` など |
-| `src/pages/` | `index` / `activities`（一覧・`[slug]` 詳細）/ `about` |
-| `src/layouts/Base.astro` | 共通レイアウト |
+| `src/pages/` | `index` / `activities`（一覧・`[slug]` 詳細）/ `about` / `404` |
+| `src/layouts/Base.astro` | 共通レイアウト（canonical タグ、`noindex` 指定） |
 | `src/assets/photos/` | 取り込んだ写真（ビルドで WebP 最適化） |
 | `scripts/fetch-photos.mjs` | ブログ画像の取り込み |
 | `src/data/activities.test.ts` | データ層のテスト（vitest） |
