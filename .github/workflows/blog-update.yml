@@ -64,8 +64,11 @@ jobs:
             git status --short calendar/events | head -60 >&2
             exit 3
           fi
-          OUT_OF_SCOPE=$(git status --porcelain \
-            | grep -v -E '^.. (calendar/(events/|sources/blog/|events-review-needed\.txt$)|site/src/assets/photos/)' || true)
+          # core.quotePath の既定 (true) では日本語パスが "..." で括られて出るため、
+          # 引用符なしで出力させたうえで、念のため先頭の " も許容する。
+          # (記事控えのファイル名は日本語。新着記事のたびにここで誤検知していた)
+          OUT_OF_SCOPE=$(git -c core.quotePath=false status --porcelain \
+            | grep -v -E '^.. "?(calendar/(events/|sources/blog/|events-review-needed\.txt$)|site/src/assets/photos/)' || true)
           if [ -n "$OUT_OF_SCOPE" ]; then
             echo "::error::想定外のパスへの変更:" >&2
             echo "$OUT_OF_SCOPE" >&2
