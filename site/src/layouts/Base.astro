@@ -34,15 +34,24 @@ const nav = [
       </nav>
     </header>
     <main class="flex-1"><slot /></main>
-    <footer class="mt-16 border-t border-black/5 py-8 text-center text-sm text-[var(--color-sumi)]/60">
-      <div>
-        奥武蔵マウンテンバイク友の会 ·
-        <a href="https://okumusashimtb.wixsite.com/omcweb" class="text-[var(--color-wakaba)]">公式ブログ</a>
-      </div>
-      <div class="mt-3 text-xs text-[var(--color-sumi)]/45">
-        このページは <a href={buildInfo.repoUrl} class="text-[var(--color-wakaba)]">{buildInfo.repo}</a> から生成しています ·
-        <a href={buildInfo.commitUrl} class="text-[var(--color-wakaba)]"><code>{buildInfo.short}</code></a>
-        <span>· {buildInfo.builtAt} JST ビルド</span>
+    <footer class="mt-16 border-t border-black/5">
+      <div class="mx-auto max-w-3xl px-4 py-8 text-center">
+        <div class="font-bold text-[var(--color-sumi)]/80">奥武蔵マウンテンバイク友の会</div>
+        <address class="mt-2 not-italic text-sm text-[var(--color-sumi)]/60 leading-relaxed">
+          事務局 〒357-0035 埼玉県飯能市柳町 3-11 サイクルハウス ミカミ内<br />
+          Tel/Fax <a href="tel:+81429744490" class="text-[var(--color-wakaba)]">042-974-4490</a>
+        </address>
+        <div class="mt-2 text-sm text-[var(--color-sumi)]/60">
+          活動の最新情報は
+          <a href="https://okumusashimtb.wixsite.com/omcweb" class="text-[var(--color-wakaba)]">公式ブログ</a>
+        </div>
+        <div class="mt-6 pt-4 border-t border-black/5 text-xs text-[var(--color-sumi)]/45 leading-relaxed">
+          このサイトは
+          <a href={buildInfo.repoUrl} class="text-[var(--color-wakaba)]">{buildInfo.repo}</a>
+          のデータから生成しています<br />
+          <a href={buildInfo.commitUrl} class="text-[var(--color-wakaba)]"><code>{buildInfo.short}</code></a>
+          <span class="ml-1">· {buildInfo.builtAt} JST ビルド</span>
+        </div>
       </div>
     </footer>
   </body>
