@@ -32,3 +32,8 @@ body: |2-
 images:
 - https://static.wixstatic.com/media/c3395c_d3016885539d4e0da16d774a61efed84~mv2.jpg
 cover: https://static.wixstatic.com/media/c3395c_ccb8293b9c9d424393e727dcddc5d464~mv2_d_2513_2508_s_4_2.jpg/v1/fill/w_1000,h_998,al_c,q_85,usm_0.66_1.00_0.01/c3395c_ccb8293b9c9d424393e727dcddc5d464~mv2_d_2513_2508_s_4_2.jpg
+links:
+- text: 飯能市役所駐車場
+  url: http://www.google.co.jp/maps/place/%E9%A3%AF%E8%83%BD%E5%B8%82%E5%BD%B9%E6%89%80/@35.8552484,139.3272611,17z/data=!4m5!3m4!1s0x0:0x2fab239039ab0a24!8m2!3d35.8557567!4d139.3278801
+- text: 飯能市阿須運動公園駐車場
+  url: http://www.google.co.jp/maps/place/%E9%98%BF%E9%A0%88%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92/@35.836159,139.3435797,15z/data=!4m5!3m4!1s0x0:0xf40c153e4d2eac82!8m2!3d35.8324797!4d139.34196

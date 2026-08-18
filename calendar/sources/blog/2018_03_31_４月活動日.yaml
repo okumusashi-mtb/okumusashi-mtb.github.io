@@ -22,3 +22,8 @@ body: |-
 
   お力添えのほど、どうぞよろしくお願いいたします。
 cover: https://static.wixstatic.com/media/c3395c_3dfd2db45a5c4b16ad641c7c92a47935.jpg/v1/fill/w_595,h_447,al_c,lg_1,q_80/c3395c_3dfd2db45a5c4b16ad641c7c92a47935.jpg
+links:
+- text: 飯能市役所駐車場
+  url: http://www.google.co.jp/maps/place/飯能市役所/@35.8552484,139.3272611,17z/data=!4m2!3m1!1s0x0:0x2fab239039ab0a24
+- text: 飯能市阿須運動公園駐車場
+  url: http://www.google.co.jp/maps/place/阿須運動公園/@35.836159,139.3435797,15z/data=!4m5!3m4!1s0x0:0xf40c153e4d2eac82!8m2!3d35.8324797!4d139.34196

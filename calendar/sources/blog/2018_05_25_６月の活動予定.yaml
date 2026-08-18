@@ -25,3 +25,8 @@ body: |-
 
   皆さまご参集のほど、どうぞ宜しくお願いいたします。
 cover: https://static.wixstatic.com/media/c3395c_e577fdcc7ae84266b15ca1551352b235~mv2_d_1632_1224_s_2.jpg/v1/fill/w_1000,h_750,al_c,q_85,usm_0.66_1.00_0.01/c3395c_e577fdcc7ae84266b15ca1551352b235~mv2_d_1632_1224_s_2.jpg
+links:
+- text: 小殿公衆トイレ先（上流側）の未舗装駐車場
+  url: http://www.google.co.jp/maps/place/小殿+公衆トイレ/@35.8839841,139.182089,18z/data=!4m12!1m6!3m5!1s0x0:0x6a19925eb2ac4693!2z5ZCN5qCX5bqB6IiO!8m2!3d35.8823048!4d139.1813278!3m4!1s0x601931f4aae4af45:0x10f283d434fd1b62!8m2!3d35.8841096!4d139.1829546
+- text: 飯能市役所名栗庁舎駐車場
+  url: http://www.google.co.jp/maps/place/名栗庁舎/@35.8836972,139.1798172,16z/data=!4m5!3m4!1s0x0:0x6a19925eb2ac4693!8m2!3d35.8823048!4d139.1813278

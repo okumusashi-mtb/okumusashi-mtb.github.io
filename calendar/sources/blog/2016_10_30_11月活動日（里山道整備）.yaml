@@ -22,3 +22,8 @@ body: |-
   前日の１７時時点の気象庁の天気予報で、埼玉県南部の１９日午前中の降水確率が５０％以上だった場合は活動日を延期します。延期の日取りにつきましては、追ってお知らせいたします。
   皆さまのご参加、お待ちしておりまーす。
 cover: https://static.wixstatic.com/media/c3395c_d9af74c196cd4551995eac404ed04edd.jpg/v1/fill/w_1000,h_563,al_c,q_85,usm_0.66_1.00_0.01/c3395c_d9af74c196cd4551995eac404ed04edd.jpg
+links:
+- text: 飯能市役所駐車場
+  url: http://www.google.co.jp/maps/place/飯能市役所/@35.8552484,139.3272611,17z/data=!4m2!3m1!1s0x0:0x2fab239039ab0a24
+- text: 飯能市阿須運動公園駐車場
+  url: http://www.google.co.jp/maps/place/阿須運動公園/@35.836159,139.3435797,15z/data=!4m5!3m4!1s0x0:0xf40c153e4d2eac82!8m2!3d35.8324797!4d139.34196

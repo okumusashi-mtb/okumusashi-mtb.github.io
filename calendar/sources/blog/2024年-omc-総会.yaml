@@ -41,3 +41,8 @@ body: |-
 images:
 - https://static.wixstatic.com/media/c3395c_6127d9d83e1549c2b8d3bfda15bc0a27~mv2.jpg
 cover: https://static.wixstatic.com/media/c3395c_09c8b64ff0d641cc9f52b69855d08e66~mv2.jpeg/v1/fill/w_1000,h_750,al_c,q_85,usm_0.66_1.00_0.01/c3395c_09c8b64ff0d641cc9f52b69855d08e66~mv2.jpeg
+links:
+- text: https://www.facebook.com/share/f1Cnh59UYVBrEcvR/
+  url: https://www.facebook.com/share/f1Cnh59UYVBrEcvR/
+- text: okumusashi.mtb@gmail.com
+  url: mailto:okumusashi.mtb@gmail.com

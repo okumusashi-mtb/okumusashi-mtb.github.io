@@ -9,3 +9,6 @@ body: |-
 images:
 - https://static.wixstatic.com/media/c3395c_f61d428abac34eb0b9601d809252cef9~mv2.jpg
 cover: https://static.wixstatic.com/media/c3395c_e88de0090d2f4a2a993e8defa2e27244~mv2.jpg/v1/fill/w_1000,h_703,al_c,q_85,usm_0.66_1.00_0.01/c3395c_e88de0090d2f4a2a993e8defa2e27244~mv2.jpg
+links:
+- text: トップページ
+  url: https://okumusashimtb.wixsite.com/omcweb

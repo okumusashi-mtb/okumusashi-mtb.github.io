@@ -18,3 +18,8 @@ body: |-
   雨続きの今日この頃、里山の傷みも気になりますね。
   活動日の好天を祈りつつ、皆さまのご参加、お待ちしておりまーす。
 cover: https://static.wixstatic.com/media/c3395c_aaa1a32492d14facb683f1c0363c1005~mv2.jpg/v1/fill/w_761,h_503,al_c,lg_1,q_85/c3395c_aaa1a32492d14facb683f1c0363c1005~mv2.jpg
+links:
+- text: 飯能市役所駐車場
+  url: http://www.google.co.jp/maps/place/飯能市役所/@35.8552484,139.3272611,17z/data=!4m5!3m4!1s0x0:0x2fab239039ab0a24!8m2!3d35.8557567!4d139.3278801
+- text: 飯能市阿須運動公園駐車場
+  url: http://www.google.co.jp/maps/place/阿須運動公園/@35.836159,139.3435797,15z/data=!4m5!3m4!1s0x0:0xf40c153e4d2eac82!8m2!3d35.8324797!4d139.34196
