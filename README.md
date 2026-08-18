@@ -107,6 +107,7 @@
 | `cal-omc-blog-fetch` | ブログの **RSS（最新分）** から活動記録を作る |
 | `cal-omc-archive-fetch` | ブログの **全記事（サイトマップ経由）** から活動記録・記事控え（`sources/blog/`）を作る |
 | `dedupe-chrome-images` | 記事控えの写真から、全ページ共通のサムネ（会と無関係な画像）を除く |
+| `extract-post-links` | 記事本文中のリンク・埋め込みを記事控えに保存（Wix 削除に備えた一度限りの道具） |
 | `cal-omc` | 活動記録を **Google カレンダーへ反映**（既定は確認のみ＝書き込まない。`--apply` で実反映） |
 | `omc_parse.py` / `omc_project.py` | 上記が使う内部処理（直接は実行しない） |
 
