@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { buildInfo } from '../lib/buildinfo';
 const { title, description, noindex } = Astro.props;
 const base = import.meta.env.BASE_URL;
 // 正規 URL は astro.config.mjs の site (GitHub Pages)。同じ成果物を Cloudflare
@@ -34,8 +35,15 @@ const nav = [
     </header>
     <main class="flex-1"><slot /></main>
     <footer class="mt-16 border-t border-black/5 py-8 text-center text-sm text-[var(--color-sumi)]/60">
-      奥武蔵マウンテンバイク友の会 ·
-      <a href="https://okumusashimtb.wixsite.com/omcweb" class="text-[var(--color-wakaba)]">公式ブログ</a>
+      <div>
+        奥武蔵マウンテンバイク友の会 ·
+        <a href="https://okumusashimtb.wixsite.com/omcweb" class="text-[var(--color-wakaba)]">公式ブログ</a>
+      </div>
+      <div class="mt-3 text-xs text-[var(--color-sumi)]/45">
+        このページは <a href={buildInfo.repoUrl} class="text-[var(--color-wakaba)]">{buildInfo.repo}</a> から生成しています ·
+        <a href={buildInfo.commitUrl} class="text-[var(--color-wakaba)]"><code>{buildInfo.short}</code></a>
+        <span>· {buildInfo.builtAt} JST ビルド</span>
+      </div>
     </footer>
   </body>
 </html>
