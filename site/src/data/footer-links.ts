@@ -26,7 +26,6 @@ export function footerGroups(base: string): FooterGroup[] {
         { label: 'あらまし', href: wix('about-us') },
         { label: '活動', href: wix('activity') },
         { label: '会則', href: wix('regulations') },
-        { label: '総会資料', href: wix('総会資料') },
       ],
     },
     {
