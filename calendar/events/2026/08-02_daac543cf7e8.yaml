@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/8-2名栗定
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-08-18'
+  fetched: '2026-08-20'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/8-2名栗定期作業のお知らせ
@@ -21,8 +21,6 @@ source:
     title: 8/2名栗定期作業の報告
     published: '2026-08-06'
     images:
-    - https://static.wixstatic.com/media/c3395c_5e644f5d2d99428d86bb61c59d93f904.jpg
-    - https://static.wixstatic.com/media/c3395c_58a6ea367ffd42b98475ed2951dcfbe0.jpg
     - https://static.wixstatic.com/media/c3395c_a267f82a593f4e929a2d8db3b2719d62~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_efed57a600c64f6286f42bbfc27d78d2~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_de9808526df34b6e8f1158d6c5ab2f0a~mv2.jpg
