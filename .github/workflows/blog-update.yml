@@ -1,6 +1,10 @@
 name: Blog update
 
 on:
+  # 高負荷で遅延しやすい毎正時を避けて :37 に置く (GitHub 公式ドキュメント)。
+  # 前日の投稿が翌朝には反映される時刻を狙う。
+  schedule:
+    - cron: '37 22 * * *'    # 毎日 07:37 JST
   repository_dispatch:
     types: [blog-updated]
   workflow_dispatch:
@@ -99,6 +103,7 @@ jobs:
         run: gh workflow run deploy-site.yml
 
       - name: Install gws (googleworkspace/cli)
+        if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
         run: |
           VERSION=v0.22.5
           URL="https://github.com/googleworkspace/cli/releases/download/${VERSION}/google-workspace-cli-x86_64-unknown-linux-gnu.tar.gz"
@@ -109,6 +114,7 @@ jobs:
           sudo install "$BIN" /usr/local/bin/gws
 
       - name: Setup Service Account credentials
+        if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
         env:
           GWS_SA_JSON: ${{ secrets.GWS_SA_JSON }}
         run: |
@@ -120,11 +126,13 @@ jobs:
           chmod 600 /tmp/sa.json
 
       - name: Apply to Google Calendar
+        if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
         env:
           GOOGLE_APPLICATION_CREDENTIALS: /tmp/sa.json
         run: make calendar-apply
 
       - name: Commit snapshots
+        if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
         run: |
           NEW_PROJ=$(git diff -- calendar/projection-review-needed.txt | grep '^+[^+]' || true)
           if [ -n "$NEW_PROJ" ]; then
