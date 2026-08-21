@@ -1,10 +1,20 @@
+# ブログの新着記事を取り込み、サイト再公開と Google カレンダー反映まで行う。
+#
+# 起動経路は 3 つ (README「自動更新の仕組み」参照):
+#   1. repository_dispatch … tecolicom/WatchCrow が RSS を 4 時間おきに見張り、新着を
+#      検知したら送ってくる。主経路。WatchCrow 側の config/sources.yaml に
+#      このリポジトリ名が書かれているので、改名したらあちらも直すこと。
+#   2. schedule … 1 を取りこぼしたときの保険。週 1 回。
+#   3. workflow_dispatch … 手動。
 name: Blog update
 
 on:
   # 高負荷で遅延しやすい毎正時を避けて :37 に置く (GitHub 公式ドキュメント)。
   # 前日の投稿が翌朝には反映される時刻を狙う。
   schedule:
-    - cron: '37 22 * * *'    # 毎日 07:37 JST
+    # cron は UTC。土曜 03:37 JST = 金曜 18:37 UTC なので曜日は 5 (金) を指定する。
+    # ここを 6 (土) にすると日曜になるので注意。
+    - cron: '37 18 * * 5'    # 毎週土曜 03:37 JST
   repository_dispatch:
     types: [blog-updated]
   workflow_dispatch:

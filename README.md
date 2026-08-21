@@ -111,6 +111,28 @@
 | `cal-omc` | 活動記録を **Google カレンダーへ反映**（既定は確認のみ＝書き込まない。`--apply` で実反映） |
 | `omc_parse.py` / `omc_project.py` | 上記が使う内部処理（直接は実行しない） |
 
+### 自動更新の仕組み（普段は手を動かさなくてよい）
+
+ブログに記事を書けば、**手動操作なしでサイトとカレンダーに反映されます**。
+起動経路は 3 つあり、上から順に速い順です。
+
+| 経路 | タイミング | 何が起きるか |
+|---|---|---|
+| **WatchCrow からの通知** | 記事公開から**最大 4 時間**以内 | 監視側が新着を検知して `repository_dispatch` を送る（主経路） |
+| **定期実行** | **毎週土曜 03:37 JST** | 上を取りこぼしたときの保険。`schedule` で自動起動 |
+| **手動実行** | 任意 | Actions 画面の `Blog update` → Run workflow |
+
+いずれも `.github/workflows/blog-update.yml` が動き、
+**記事の取り込み → サイトの再公開 → Google カレンダーへの反映**まで一続きで行います。
+
+WatchCrow（[tecolicom/WatchCrow](https://github.com/tecolicom/WatchCrow)）は会のブログの
+RSS を 4 時間おきに見張っている別リポジトリの仕掛けです。その設定
+（`config/sources.yaml`）に**このリポジトリの名前が書かれています**。
+
+> **リポジトリ名を変えるときは WatchCrow の設定も直してください。**
+> 2026-08 に改名した際にこれを忘れ、通知が届かず新着記事が 2 週間取り込まれないままに
+> なりました（定期実行はその後に追加した保険です）。
+
 ### よく使う手順（`make` で実行）
 
 リポジトリ直下で `make` を使います。`make help` で一覧が出ます。
@@ -147,6 +169,8 @@ GitHub Pages（`https://okumusashi-mtb.github.io/`）に公開します。詳し
 > リポジトリ名が `<オーナー名>.github.io`（このリポジトリでは `okumusashi-mtb.github.io`）と
 > 完全に一致する場合だけです。名前を変えると、公開 URL が
 > `https://okumusashi-mtb.github.io/<新しい名前>/` に変わってしまいます。
+> それでも変える場合は、**WatchCrow 側の `config/sources.yaml` の `repo:` も直すこと**
+> （上記「自動更新の仕組み」参照）。
 
 直下の `firebase.json` / `.firebaserc` は、比較のため Firebase Hosting を試したときの設定です。
 Cloudflare Pages（`https://omcweb.pages.dev/`）にも試しにデプロイしてあります。
