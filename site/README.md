@@ -164,7 +164,8 @@ Cloudflare Web Analytics を使う。Cookie を使わず個人を追跡しない
 Cloudflare ダッシュボードの `Analytics & Logs > Web Analytics` でサイトを追加すると
 トークンが発行される。**本番は GitHub Pages なので、Cloudflare Pages 側の自動挿入は
 使えない**（`pages.dev` にしか効かない）。そのため `Base.astro` の `</body>` 直前に
-自前で出している。`defer` 付きなので描画は止めない。
+自前で出している。公式 snippet に合わせて `type="module"` にしており、モジュールは
+既定で defer 相当なので描画は止めない。
 
 開発サーバ（`npm run dev`）では出力されない（`import.meta.env.PROD` で囲んである）。
 

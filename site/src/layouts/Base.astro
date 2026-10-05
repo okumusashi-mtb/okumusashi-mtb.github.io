@@ -69,10 +69,12 @@ const nav = [
         </div>
       </div>
     </footer>
-    {/* Cloudflare Web Analytics。defer なので描画を止めない。is:inline で Astro の
-        バンドル対象から外し、外部スクリプトのまま出す。設定は data/analytics.ts */}
+    {/* Cloudflare Web Analytics。公式 snippet に合わせて type="module" にしている
+        (モジュールは既定で defer 相当なので描画を止めない)。module は CORS で取得される
+        が beacon.min.js は access-control-allow-origin: * を返すので問題ない。
+        is:inline で Astro のバンドル対象から外す。設定は data/analytics.ts */}
     {import.meta.env.PROD && cfBeaconToken && (
-      <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js"
+      <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
               data-cf-beacon={JSON.stringify({ token: cfBeaconToken })}></script>
     )}
   </body>
