@@ -153,6 +153,21 @@ wrangler pages deploy site/dist --project-name omcweb --branch main
 するなら `public/_headers`（ビルド出力にそのままコピーされる）に書く。
 本番にするなら GitHub 連携で自動デプロイに切り替えること。
 
+## アクセス解析
+
+Cloudflare Web Analytics を使う。Cookie を使わず個人を追跡しないので同意バナーは不要。
+
+トークンは `src/data/analytics.ts` に直接書く。**秘密情報ではない**（配信される HTML に
+そのまま載るもので、Cloudflare も公開前提で発行している）。空文字にすればビーコンは
+出力されず、計測をやめられる。
+
+Cloudflare ダッシュボードの `Analytics & Logs > Web Analytics` でサイトを追加すると
+トークンが発行される。**本番は GitHub Pages なので、Cloudflare Pages 側の自動挿入は
+使えない**（`pages.dev` にしか効かない）。そのため `Base.astro` の `</body>` 直前に
+自前で出している。`defer` 付きなので描画は止めない。
+
+開発サーバ（`npm run dev`）では出力されない（`import.meta.env.PROD` で囲んである）。
+
 ## 主な構成
 
 | 場所 | 内容 |
