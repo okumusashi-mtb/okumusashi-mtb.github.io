@@ -1,12 +1,12 @@
-summary: 名栗定期作業
+summary: 名栗定期作業の活動
 date: '2026-10-04'
 all_day: true
 category: 定期作業
-description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10-4名栗定期作業のお知らせ'
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10-4-名栗定期作業の活動報告'
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-09-25'
+  fetched: '2026-10-09'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/10-4名栗定期作業のお知らせ
@@ -16,3 +16,17 @@ source:
       10月4日（日）は名栗じてんしゃ広場の定期整備を行います。草刈りをメインに行いつつ、荒れた路面を補修します。同広場に午前9時にお集まりください。11時頃まで作業を行う予定です。
 
       なお、前日午後5時の気象庁発表による埼玉県南部の天気予報で降水確率が50％以上の場合は中止といたしますのでご了承ください。
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/10-4-名栗定期作業の活動報告
+    title: 10/4 名栗定期作業の活動報告
+    published: '2026-10-05'
+    images:
+    - https://static.wixstatic.com/media/c3395c_5e644f5d2d99428d86bb61c59d93f904.jpg
+    - https://static.wixstatic.com/media/c3395c_58a6ea367ffd42b98475ed2951dcfbe0.jpg
+    - https://static.wixstatic.com/media/c3395c_34ebcd8543484ec5a70a9b96204aad3f~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_2d2fbc75ba3d46cdb6479f986a5442fb~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_b70826703c014f9b841afcfdabb1b184~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_80918a72a41841b3896980ff1d7c11c0~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_f3c910f4d90f48a58d53784155630c1c~mv2.png
+    - https://static.wixstatic.com/media/c3395c_c24ace0b4561412b9226b61032a746fd~mv2.png
+    - https://static.wixstatic.com/media/c3395c_ec9e25486a6b4598b32ccad820e10bdb~mv2.jpg
