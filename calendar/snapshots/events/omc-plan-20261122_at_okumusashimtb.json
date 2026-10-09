@@ -5,9 +5,9 @@
   },
   "description": "奥武蔵マウンテンバイク友の会 活動予定",
   "end": {
-    "date": "2026-11-23"
+    "date": "2026-11-30"
   },
-  "etag": "\"3566254536218942\"",
+  "etag": "\"3582403064578654\"",
   "eventType": "default",
   "htmlLink": "https://www.google.com/calendar/event?eid=X2R0bW02YmJnZGhnbXNiOWk2MHAzY2M5aDY4cDQwcnJiZWxtbmFzcjFlZGs2aXJia2M4IG9rdW11c2FzaGkubXRiQG0",
   "iCalUID": "omc-plan-20261122@okumusashimtb",
@@ -21,12 +21,12 @@
   "reminders": {
     "useDefault": false
   },
-  "sequence": 0,
+  "sequence": 1,
   "start": {
-    "date": "2026-11-22"
+    "date": "2026-11-29"
   },
   "status": "confirmed",
   "summary": "市民清掃デー",
   "transparency": "transparent",
-  "updated": "2026-07-04T01:07:48.109Z"
+  "updated": "2026-10-05T11:58:52.289Z"
 }
