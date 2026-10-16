@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10-4-名栗�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-10-09'
+  fetched: '2026-10-16'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/10-4名栗定期作業のお知らせ
@@ -21,8 +21,6 @@ source:
     title: 10/4 名栗定期作業の活動報告
     published: '2026-10-05'
     images:
-    - https://static.wixstatic.com/media/c3395c_5e644f5d2d99428d86bb61c59d93f904.jpg
-    - https://static.wixstatic.com/media/c3395c_58a6ea367ffd42b98475ed2951dcfbe0.jpg
     - https://static.wixstatic.com/media/c3395c_34ebcd8543484ec5a70a9b96204aad3f~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_2d2fbc75ba3d46cdb6479f986a5442fb~mv2.jpg
     - https://static.wixstatic.com/media/c3395c_b70826703c014f9b841afcfdabb1b184~mv2.jpg
