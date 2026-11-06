@@ -1,0 +1,24 @@
+summary: 里山道整備
+date: '2026-10-31'
+all_day: true
+category: 里山整備
+description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10月31日の里山道整備の報告'
+source:
+  type: omc-blog
+  crawler: cal-omc-archive-fetch
+  fetched: '2026-11-06'
+  posts:
+  - kind: report
+    url: https://okumusashimtb.wixsite.com/omcweb/post/10月31日の里山道整備の報告
+    title: 10月31日の里山道整備の報告
+    published: '2026-11-01'
+    images:
+    - https://static.wixstatic.com/media/c3395c_5e644f5d2d99428d86bb61c59d93f904.jpg
+    - https://static.wixstatic.com/media/c3395c_58a6ea367ffd42b98475ed2951dcfbe0.jpg
+    - https://static.wixstatic.com/media/c3395c_ea8dd58946694b15ae9bc225fc3566e5~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_1d461f8e69204ad4b194720945a2ae3a~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_664ba2090545494485aa0165ca12d79b~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_a8f85d85f0d44127a4ee84731b640aa3~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_c7f397913baf4563b345c9c6591c35ee~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_33cc5c37caf24e8d91b1f202c4526588~mv2.jpg
+    - https://static.wixstatic.com/media/c3395c_53cf37f3393b4375a9845c638ba022db~mv2.jpg
