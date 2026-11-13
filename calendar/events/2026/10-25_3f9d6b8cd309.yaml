@@ -6,7 +6,7 @@ description: '出典: https://okumusashimtb.wixsite.com/omcweb/post/10-25日高�
 source:
   type: omc-blog
   crawler: cal-omc-archive-fetch
-  fetched: '2026-11-06'
+  fetched: '2026-11-13'
   posts:
   - kind: announce
     url: https://okumusashimtb.wixsite.com/omcweb/post/10-25日高市清掃作業のお知らせ
@@ -27,8 +27,6 @@ source:
     title: 10/25日高市清掃作業の報告
     published: '2026-10-31'
     images:
-    - https://static.wixstatic.com/media/c3395c_5e644f5d2d99428d86bb61c59d93f904.jpg
-    - https://static.wixstatic.com/media/c3395c_58a6ea367ffd42b98475ed2951dcfbe0.jpg
     - https://static.wixstatic.com/media/c3395c_8a6bcbbdc5fc4c8898e56dca5d1f95d3~mv2.png
     - https://static.wixstatic.com/media/c3395c_44a48492bcae422dab2de1f7b62c6b74~mv2.png
     - https://static.wixstatic.com/media/c3395c_a85369fd6d0c4e3a8c8f098d31748f8e~mv2.png
