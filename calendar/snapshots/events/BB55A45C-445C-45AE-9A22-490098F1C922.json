@@ -1,0 +1,32 @@
+{
+  "created": "2026-11-09T12:29:58.000Z",
+  "creator": {
+    "email": "okumusashi.mtb@gmail.com",
+    "self": true
+  },
+  "end": {
+    "dateTime": "2026-11-09T22:00:00+09:00",
+    "timeZone": "Asia/Tokyo"
+  },
+  "etag": "\"3588456362911870\"",
+  "eventType": "default",
+  "htmlLink": "https://www.google.com/calendar/event?eid=Xzg5MTNhZGExNmdxazZiOWs2Z3FrNmI5azZsMGthYjlwODRwMzRiOWs3NG8zMGU5bzhvb2s2ZTlpNjggb2t1bXVzYXNoaS5tdGJAbQ",
+  "iCalUID": "BB55A45C-445C-45AE-9A22-490098F1C922",
+  "id": "_8913ada16gqk6b9k6gqk6b9k6l0kab9p84p34b9k74o30e9o8ook6e9i68",
+  "kind": "calendar#event",
+  "organizer": {
+    "email": "okumusashi.mtb@gmail.com",
+    "self": true
+  },
+  "reminders": {
+    "useDefault": true
+  },
+  "sequence": 1,
+  "start": {
+    "dateTime": "2026-11-09T20:30:00+09:00",
+    "timeZone": "Asia/Tokyo"
+  },
+  "status": "confirmed",
+  "summary": "世話人会",
+  "updated": "2026-11-09T12:43:01.455Z"
+}

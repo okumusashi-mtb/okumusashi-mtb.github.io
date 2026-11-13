@@ -5,10 +5,10 @@
     "self": true
   },
   "end": {
-    "dateTime": "2026-11-09T22:30:00+09:00",
+    "dateTime": "2026-12-10T22:00:00+09:00",
     "timeZone": "Asia/Tokyo"
   },
-  "etag": "\"3582408164236062\"",
+  "etag": "\"3588456322727774\"",
   "eventType": "default",
   "htmlLink": "https://www.google.com/calendar/event?eid=M3RwNjZpcmVpcjNiZDA4NmJnODFjMHZnb3Ugb2t1bXVzYXNoaS5tdGJAbQ",
   "iCalUID": "3tp66ireir3bd086bg81c0vgou@google.com",
@@ -21,12 +21,12 @@
   "reminders": {
     "useDefault": true
   },
-  "sequence": 0,
+  "sequence": 46,
   "start": {
-    "dateTime": "2026-11-09T20:30:00+09:00",
+    "dateTime": "2026-12-10T20:30:00+09:00",
     "timeZone": "Asia/Tokyo"
   },
   "status": "confirmed",
   "summary": "世話人会",
-  "updated": "2026-10-05T12:41:22.118Z"
+  "updated": "2026-11-09T12:42:41.363Z"
 }
